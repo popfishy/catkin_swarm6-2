@@ -11,4 +11,5 @@ __pycache__/
 /.catkin_tools/
 /.pytest_cache/
 /.vscode/
-/references/
+/references/ego-planner-swarm/
+/references/swarm-main/
