@@ -1,0 +1,8 @@
+build/
+devel/
+logs/
+__pycache__/
+*.pyc
+*.catkin_tools
+*.pytest_cache
+*.vscode
