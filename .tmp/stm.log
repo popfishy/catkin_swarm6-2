@@ -1,0 +1,220 @@
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+[==========] Running 40 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 40 tests from EgoStateMachine
+[ RUN      ] EgoStateMachine.InitialStateIsHold
+[       OK ] EgoStateMachine.InitialStateIsHold (217 ms)
+[ RUN      ] EgoStateMachine.PlanLatencyOnlyMovesActivationEpoch
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:113: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.PlanLatencyOnlyMovesActivationEpoch (184 ms)
+[ RUN      ] EgoStateMachine.ShadowSafetyTickDoesNotChangeFlightBehavior
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:138: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.ShadowSafetyTickDoesNotChangeFlightBehavior (199 ms)
+[ RUN      ] EgoStateMachine.ActiveEmergencyBrakeStopsAndHoldsEndpoint
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:177: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.ActiveEmergencyBrakeStopsAndHoldsEndpoint (200 ms)
+[ RUN      ] EgoStateMachine.ActiveEmergencyBrakeRejectsReplanCommit
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:220: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.ActiveEmergencyBrakeRejectsReplanCommit (303 ms)
+[ RUN      ] EgoStateMachine.FirstPlanReadyForLeaderImmediately
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.FirstPlanReadyForLeaderImmediately (201 ms)
+[ RUN      ] EgoStateMachine.FirstPlanWaitsForPredecessorIntent
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.FirstPlanWaitsForPredecessorIntent (205 ms)
+[ RUN      ] EgoStateMachine.FirstPlanTimeoutReleasesWithoutPredecessor
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.FirstPlanTimeoutReleasesWithoutPredecessor (202 ms)
+[ RUN      ] EgoStateMachine.EmergencyReplanFirstMitigatesCollision
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:318: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.EmergencyReplanFirstMitigatesCollision (201 ms)
+[ RUN      ] EgoStateMachine.YieldHighIdCommitsLateralCandidate
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.YieldHighIdCommitsLateralCandidate (202 ms)
+[ RUN      ] EgoStateMachine.YieldLowIdStandOnRequestsReplan
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.YieldLowIdStandOnRequestsReplan (202 ms)
+[ RUN      ] EgoStateMachine.YieldEpisodeLocksCommit
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.YieldEpisodeLocksCommit (203 ms)
+[ RUN      ] EgoStateMachine.YieldReplanOnPlanFailureCommitsCandidate
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.YieldReplanOnPlanFailureCommitsCandidate (200 ms)
+[ RUN      ] EgoStateMachine.YieldReplanStandOnFailsToPlan
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.YieldReplanStandOnFailsToPlan (203 ms)
+[ RUN      ] EgoStateMachine.ReplanFailSoftLandingResetsOnCommit
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ReplanFailSoftLandingResetsOnCommit (304 ms)
+[ RUN      ] EgoStateMachine.ReplanWithLowClearanceMarginCommitsCandidate
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ReplanWithLowClearanceMarginCommitsCandidate (200 ms)
+[ RUN      ] EgoStateMachine.IntentPhaseProtocolKeepsLegacyActiveOnly
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.IntentPhaseProtocolKeepsLegacyActiveOnly (200 ms)
+[ RUN      ] EgoStateMachine.GpsBiasCorrectsNeighborIntentEpoch
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.GpsBiasCorrectsNeighborIntentEpoch (304 ms)
+[ RUN      ] EgoStateMachine.MissingOneGpsBiasFallsBackToUncorrectedEpoch
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.MissingOneGpsBiasFallsBackToUncorrectedEpoch (504 ms)
+[ RUN      ] EgoStateMachine.NeighborIntentValidationAndSequenceReset
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.NeighborIntentValidationAndSequenceReset (200 ms)
+[ RUN      ] EgoStateMachine.CollisionCheckTickRequestsReplanOnConflict
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:757: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.CollisionCheckTickRequestsReplanOnConflict (202 ms)
+[ RUN      ] EgoStateMachine.ArmOffboardEdgeStartsTakeoff
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ArmOffboardEdgeStartsTakeoff (203 ms)
+[ RUN      ] EgoStateMachine.TakeoffPublishesHoldSetpoint
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.TakeoffPublishesHoldSetpoint (202 ms)
+[ RUN      ] EgoStateMachine.RepeatedArmEdgesRemainHold
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.RepeatedArmEdgesRemainHold (203 ms)
+[ RUN      ] EgoStateMachine.PublishSetpointDoesNotReclaimWhileGoalPending
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.PublishSetpointDoesNotReclaimWhileGoalPending (201 ms)
+[ RUN      ] EgoStateMachine.CompletedFreezesInHold
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.CompletedFreezesInHold (202 ms)
+[ RUN      ] EgoStateMachine.DegenerateSamePointRealArrivalCompletes
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:946: Failure
+Value of: node.replanOnce(true)
+  Actual: false
+Expected: true
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:947: Failure
+Expected equality of these values:
+  node.execState()
+    Which is: "HOLD"
+  kStateCompleted
+    Which is: "COMPLETED"
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.DegenerateSamePointRealArrivalCompletes (201 ms)
+[ RUN      ] EgoStateMachine.DegenerateWhileFailingClosesAfterTimeout
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:970: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.DegenerateWhileFailingClosesAfterTimeout (303 ms)
+[ RUN      ] EgoStateMachine.ResourceLimitClosesPlanFailedImmediately
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ResourceLimitClosesPlanFailedImmediately (200 ms)
+[ RUN      ] EgoStateMachine.HoldRemainsFixed
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.HoldRemainsFixed (203 ms)
+[ RUN      ] EgoStateMachine.ArmOffboardDoesNotBlockReplan
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ArmOffboardDoesNotBlockReplan (201 ms)
+[ RUN      ] EgoStateMachine.PlanExecAdvanceTargetSkipsReachedKeypoints
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.PlanExecAdvanceTargetSkipsReachedKeypoints (304 ms)
+[ RUN      ] EgoStateMachine.PlanExecAdvanceDiscardsTooCloseTargets
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_ego_state_machine.cpp:1160: Failure
+Value of: node.replanOnce()
+  Actual: false
+Expected: true
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[  FAILED  ] EgoStateMachine.PlanExecAdvanceDiscardsTooCloseTargets (202 ms)
+[ RUN      ] EgoStateMachine.PlanExecArrivalCompletesAtFinalKeypoint
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.PlanExecArrivalCompletesAtFinalKeypoint (200 ms)
+[ RUN      ] EgoStateMachine.RollingSegmentsReachCompleted
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.RollingSegmentsReachCompleted (803 ms)
+[ RUN      ] EgoStateMachine.RollingSegmentsReachCompletedWithTrackingLag
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.RollingSegmentsReachCompletedWithTrackingLag (907 ms)
+[ RUN      ] EgoStateMachine.ReplanSnapshotsKeepSegmentVelocity
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ReplanSnapshotsKeepSegmentVelocity (803 ms)
+[ RUN      ] EgoStateMachine.PeriodicReplanTriggersDuringSegmentExecution
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.PeriodicReplanTriggersDuringSegmentExecution (803 ms)
+[ RUN      ] EgoStateMachine.ReplanUsesTrajectoryStateNotLivePose
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.ReplanUsesTrajectoryStateNotLivePose (804 ms)
+[ RUN      ] EgoStateMachine.HoldLocksPositionNotPoseDrift
+XmlRpcServer::acceptConnection: Could not accept connection (Resource temporarily unavailable).
+[       OK ] EgoStateMachine.HoldLocksPositionNotPoseDrift (305 ms)
+[----------] 40 tests from EgoStateMachine (12091 ms total)
+
+[----------] Global test environment tear-down
+[==========] 40 tests from 1 test suite ran. (12091 ms total)
+[  PASSED  ] 31 tests.
+[  FAILED  ] 9 tests, listed below:
+[  FAILED  ] EgoStateMachine.PlanLatencyOnlyMovesActivationEpoch
+[  FAILED  ] EgoStateMachine.ShadowSafetyTickDoesNotChangeFlightBehavior
+[  FAILED  ] EgoStateMachine.ActiveEmergencyBrakeStopsAndHoldsEndpoint
+[  FAILED  ] EgoStateMachine.ActiveEmergencyBrakeRejectsReplanCommit
+[  FAILED  ] EgoStateMachine.EmergencyReplanFirstMitigatesCollision
+[  FAILED  ] EgoStateMachine.CollisionCheckTickRequestsReplanOnConflict
+[  FAILED  ] EgoStateMachine.DegenerateSamePointRealArrivalCompletes
+[  FAILED  ] EgoStateMachine.DegenerateWhileFailingClosesAfterTimeout
+[  FAILED  ] EgoStateMachine.PlanExecAdvanceDiscardsTooCloseTargets
+
+ 9 FAILED TESTS
+... logging to /home/ub20tg/.ros/log/18acedf8-a2c8-11f1-ad4c-e1e7035b8435/roslaunch-ub20tglh-1475333.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;roscore
+[1mstarted roslaunch server http://localhost:46079/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [1475377][0m
+[1mROS_MASTER_URI=http://localhost:11411/[0m
+]2;roscore http://localhost:11411/
+[1msetting /run_id to 18acedf8-a2c8-11f1-ad4c-e1e7035b8435[0m
+[1mprocess[rosout-1]: started with pid [1475395][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

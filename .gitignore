@@ -6,3 +6,9 @@ __pycache__/
 *.catkin_tools
 *.pytest_cache
 *.vscode
+
+# 顶层辅助目录不纳入 catkin_swarm6-2
+/.catkin_tools/
+/.pytest_cache/
+/.vscode/
+/references/

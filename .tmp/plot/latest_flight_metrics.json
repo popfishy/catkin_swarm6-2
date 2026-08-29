@@ -1,0 +1,2558 @@
+{
+  "generated_at_utc": "2026-08-28T18:42:33.822550+00:00",
+  "provenance": {
+    "workspace": "/home/ub20tg/catkin_swarm6-2",
+    "cohort": {
+      "UAV1": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_0/log/2026-08-28/14_40_54.ulg",
+      "UAV2": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_1/log/2026-08-28/14_40_54.ulg",
+      "UAV3": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_2/log/2026-08-28/14_40_54.ulg",
+      "UAV4": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_3/log/2026-08-28/14_40_54.ulg",
+      "UAV5": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_4/log/2026-08-28/14_40_54.ulg",
+      "UAV6": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_5/log/2026-08-28/14_40_54.ulg",
+      "UAV7": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_6/log/2026-08-28/14_40_55.ulg",
+      "UAV8": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_7/log/2026-08-28/14_40_55.ulg",
+      "UAV9": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_8/log/2026-08-28/14_40_55.ulg",
+      "UAV10": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_9/log/2026-08-28/14_40_55.ulg",
+      "UAV11": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_10/log/2026-08-28/14_40_55.ulg",
+      "UAV12": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_11/log/2026-08-28/14_40_55.ulg",
+      "UAV13": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_12/log/2026-08-28/14_40_55.ulg",
+      "UAV14": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_13/log/2026-08-28/14_40_55.ulg",
+      "UAV15": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_14/log/2026-08-28/14_40_55.ulg"
+    },
+    "cohort_start_utc": "2026-08-28T14:40:54+00:00",
+    "goal_epoch": 1787928197.255,
+    "goal_cst": "2026-08-28T22:43:17.255000+08:00",
+    "analysis_window_epoch": [
+      1787928192.255,
+      1787928357.255
+    ],
+    "target_plan": "/home/ub20tg/catkin_swarm6-2/references/runtime/examples/joint_mission/group_a/plans/plans.json",
+    "target_plan_id": "prepare-a",
+    "target_transform": "E=right*sin(h)+forward*cos(h), N=-right*cos(h)+forward*sin(h), U=up",
+    "heading_rad": -0.006,
+    "target_participants": [
+      "UAV1",
+      "UAV2",
+      "UAV3",
+      "UAV4",
+      "UAV5",
+      "UAV6",
+      "UAV7",
+      "UAV8",
+      "UAV9",
+      "UAV10",
+      "UAV11",
+      "UAV12"
+    ],
+    "note": "A13-A15 have physical ULogs but no prepare-a target assignment"
+  },
+  "warnings": [
+    "PX4 trajectory_setpoint cadence is not definitive proof of the ROS relay publication rate.",
+    "No complete task-state rosbag exists for this cohort; the UAV4 result time is inferred.",
+    "headless_test/07_task_prepare.log belongs to an older command and was excluded."
+  ],
+  "vehicles": {
+    "UAV1": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_0/log/2026-08-28/14_40_54.ulg",
+      "utc_offset_s": 1787776009.183269,
+      "samples": 16134,
+      "start_epoch": 1787928192.2613761,
+      "end_epoch": 1787928343.512595,
+      "max_speed_mps": 1.335347734786407,
+      "max_acceleration_mps2": 3.4631839475104127,
+      "pva_to_position_hold_epoch": 1787928269.9258971,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.20000386238098145,
+        "p95_s": 0.20045888423919678,
+        "max_s": 1.2673020362854004,
+        "gaps_ge_0_2_s": 382
+      },
+      "target_enu_m": [
+        49.894100632698866,
+        -17.79968320094824,
+        12.0
+      ],
+      "minimum_target_error_m": 0.07156257200117391,
+      "minimum_target_error_epoch": 1787928315.093158,
+      "final_target_error_m": 2.7025818982209753,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928269.735153,
+          "end_epoch": 1787928340.880729,
+          "duration_s": 71.15375590324402
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928268.708021,
+          "end_epoch": 1787928341.208203,
+          "duration_s": 72.50836205482483
+        }
+      ]
+    },
+    "UAV2": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_1/log/2026-08-28/14_40_54.ulg",
+      "utc_offset_s": 1787776009.174996,
+      "samples": 16081,
+      "start_epoch": 1787928192.277217,
+      "end_epoch": 1787928343.504303,
+      "max_speed_mps": 1.280714714514075,
+      "max_acceleration_mps2": 4.08653292056523,
+      "pva_to_position_hold_epoch": 1787928265.469692,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.1999971866607666,
+        "p95_s": 0.2005324363708496,
+        "max_s": 1.2584469318389893,
+        "gaps_ge_0_2_s": 362
+      },
+      "target_enu_m": [
+        44.92419045242919,
+        -12.769773380677915,
+        12.0
+      ],
+      "minimum_target_error_m": 0.05664409076859358,
+      "minimum_target_error_epoch": 1787928315.486121,
+      "final_target_error_m": 2.7400471121799734,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928267.1313028,
+          "end_epoch": 1787928340.8404748,
+          "duration_s": 73.71738755702972
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928264.640234,
+          "end_epoch": 1787928341.1679938,
+          "duration_s": 76.5359753370285
+        }
+      ]
+    },
+    "UAV3": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_2/log/2026-08-28/14_40_54.ulg",
+      "utc_offset_s": 1787776009.1537814,
+      "samples": 16264,
+      "start_epoch": 1787928192.2587864,
+      "end_epoch": 1787928343.4709275,
+      "max_speed_mps": 1.286838961212039,
+      "max_acceleration_mps2": 4.11252829183198,
+      "pva_to_position_hold_epoch": 1787928263.9737175,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.199998140335083,
+        "p95_s": 0.23345538377761843,
+        "max_s": 1.0546691417694092,
+        "gaps_ge_0_2_s": 368
+      },
+      "target_enu_m": [
+        44.89419063242887,
+        -17.769683380947917,
+        12.0
+      ],
+      "minimum_target_error_m": 0.062162963471196694,
+      "minimum_target_error_epoch": 1787928313.6432114,
+      "final_target_error_m": 2.671802468493521,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928264.0726445,
+          "end_epoch": 1787928340.8670013,
+          "duration_s": 76.80244970321655
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928263.1536083,
+          "end_epoch": 1787928341.1905565,
+          "duration_s": 78.04504108428955
+        }
+      ]
+    },
+    "UAV4": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_3/log/2026-08-28/14_40_54.ulg",
+      "utc_offset_s": 1787776009.148615,
+      "samples": 16203,
+      "start_epoch": 1787928192.2577708,
+      "end_epoch": 1787928343.4778018,
+      "max_speed_mps": 1.2756832678358536,
+      "max_acceleration_mps2": 4.074977572257744,
+      "pva_to_position_hold_epoch": 1787928261.106797,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.199998140335083,
+        "p95_s": 0.20022499561309814,
+        "max_s": 1.1175811290740967,
+        "gaps_ge_0_2_s": 365
+      },
+      "target_enu_m": [
+        44.86419081242854,
+        -22.769593381217916,
+        12.0
+      ],
+      "minimum_target_error_m": 0.061804973813082476,
+      "minimum_target_error_epoch": 1787928313.645962,
+      "final_target_error_m": 2.7621901976712104,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928261.2362819,
+          "end_epoch": 1787928340.813962,
+          "duration_s": 79.58581209182739
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928260.2693858,
+          "end_epoch": 1787928341.1375108,
+          "duration_s": 80.87625694274902
+        }
+      ]
+    },
+    "UAV5": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_4/log/2026-08-28/14_40_54.ulg",
+      "utc_offset_s": 1787776009.188983,
+      "samples": 16160,
+      "start_epoch": 1787928192.2553139,
+      "end_epoch": 1787928343.390159,
+      "max_speed_mps": 1.512938831204027,
+      "max_acceleration_mps2": 3.4654306455875212,
+      "pva_to_position_hold_epoch": 1787928265.806582,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.19999909400939941,
+        "p95_s": 0.20042896270751953,
+        "max_s": 1.1601841449737549,
+        "gaps_ge_0_2_s": 371
+      },
+      "target_enu_m": [
+        44.83419099242822,
+        -27.769503381487915,
+        12.0
+      ],
+      "minimum_target_error_m": 0.07095731270089581,
+      "minimum_target_error_epoch": 1787928322.6732779,
+      "final_target_error_m": 2.648985474505117,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928267.8296099,
+          "end_epoch": 1787928340.806489,
+          "duration_s": 72.98503708839417
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928264.51356,
+          "end_epoch": 1787928341.149971,
+          "duration_s": 76.6445689201355
+        }
+      ]
+    },
+    "UAV6": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_5/log/2026-08-28/14_40_54.ulg",
+      "utc_offset_s": 1787776009.175785,
+      "samples": 16040,
+      "start_epoch": 1787928192.2584321,
+      "end_epoch": 1787928343.3891342,
+      "max_speed_mps": 1.3714446280246941,
+      "max_acceleration_mps2": 3.7654794038010966,
+      "pva_to_position_hold_epoch": 1787928263.29372,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.20000100135803223,
+        "p95_s": 0.20056734085083008,
+        "max_s": 1.1681108474731445,
+        "gaps_ge_0_2_s": 381
+      },
+      "target_enu_m": [
+        49.924100452699186,
+        -12.799773200678239,
+        12.0
+      ],
+      "minimum_target_error_m": 0.06813461268931705,
+      "minimum_target_error_epoch": 1787928315.895725,
+      "final_target_error_m": 2.7791651734769625,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928263.636192,
+          "end_epoch": 1787928340.789499,
+          "duration_s": 77.16155290603638
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928262.473505,
+          "end_epoch": 1787928341.14487,
+          "duration_s": 78.67961096763611
+        }
+      ]
+    },
+    "UAV7": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_6/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.1664495,
+      "samples": 16010,
+      "start_epoch": 1787928192.2716806,
+      "end_epoch": 1787928343.3758194,
+      "max_speed_mps": 1.266112996502205,
+      "max_acceleration_mps2": 4.1648549156331525,
+      "pva_to_position_hold_epoch": 1787928261.5437815,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.20000195503234863,
+        "p95_s": 0.2003629207611084,
+        "max_s": 1.2135710716247559,
+        "gaps_ge_0_2_s": 387
+      },
+      "target_enu_m": [
+        49.86410081269854,
+        -22.79959320121824,
+        12.0
+      ],
+      "minimum_target_error_m": 0.07332230341128697,
+      "minimum_target_error_epoch": 1787928322.6721087,
+      "final_target_error_m": 2.6358155149398836,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928260.9929616,
+          "end_epoch": 1787928340.8401425,
+          "duration_s": 79.85543990135193
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928260.6181126,
+          "end_epoch": 1787928341.1515205,
+          "duration_s": 80.5416669845581
+        }
+      ]
+    },
+    "UAV8": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_7/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.175241,
+      "samples": 15993,
+      "start_epoch": 1787928192.257998,
+      "end_epoch": 1787928343.404619,
+      "max_speed_mps": 1.333459862297686,
+      "max_acceleration_mps2": 3.5920724680150444,
+      "pva_to_position_hold_epoch": 1787928263.94743,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.20000410079956055,
+        "p95_s": 0.20041298866271973,
+        "max_s": 1.2224938869476318,
+        "gaps_ge_0_2_s": 391
+      },
+      "target_enu_m": [
+        49.83410099269822,
+        -27.79950320148824,
+        12.0
+      ],
+      "minimum_target_error_m": 0.08357864467752955,
+      "minimum_target_error_epoch": 1787928340.411325,
+      "final_target_error_m": 2.7607808898708672,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928263.335902,
+          "end_epoch": 1787928340.840881,
+          "duration_s": 77.51325821876526
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928262.768766,
+          "end_epoch": 1787928341.168385,
+          "duration_s": 78.40789818763733
+        }
+      ]
+    },
+    "UAV9": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_8/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.160161,
+      "samples": 15961,
+      "start_epoch": 1787928192.265847,
+      "end_epoch": 1787928343.381448,
+      "max_speed_mps": 1.307390236202102,
+      "max_acceleration_mps2": 4.1497381077357245,
+      "pva_to_position_hold_epoch": 1787928262.511328,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.20000100135803223,
+        "p95_s": 0.23338828086853025,
+        "max_s": 1.048936128616333,
+        "gaps_ge_0_2_s": 381
+      },
+      "target_enu_m": [
+        54.924010452969185,
+        -12.829773020678564,
+        12.0
+      ],
+      "minimum_target_error_m": 0.0736350117414815,
+      "minimum_target_error_epoch": 1787928315.900463,
+      "final_target_error_m": 2.624385177874787,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928262.921087,
+          "end_epoch": 1787928340.869965,
+          "duration_s": 77.95719623565674
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928261.711462,
+          "end_epoch": 1787928341.181341,
+          "duration_s": 79.47819709777832
+        }
+      ]
+    },
+    "UAV10": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_9/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.158628,
+      "samples": 15914,
+      "start_epoch": 1787928192.261019,
+      "end_epoch": 1787928343.368131,
+      "max_speed_mps": 1.4632487604164015,
+      "max_acceleration_mps2": 3.9970380960394443,
+      "pva_to_position_hold_epoch": 1787928260.885534,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.19999909400939941,
+        "p95_s": 0.20023488998413086,
+        "max_s": 1.0303459167480469,
+        "gaps_ge_0_2_s": 371
+      },
+      "target_enu_m": [
+        54.894010632968865,
+        -17.829683020948565,
+        12.0
+      ],
+      "minimum_target_error_m": 0.07531027296107055,
+      "minimum_target_error_epoch": 1787928340.406307,
+      "final_target_error_m": 2.531276776955057,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928260.41781,
+          "end_epoch": 1787928340.932151,
+          "duration_s": 80.5226821899414
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928260.071297,
+          "end_epoch": 1787928341.251761,
+          "duration_s": 81.188805103302
+        }
+      ]
+    },
+    "UAV11": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_10/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.160096,
+      "samples": 15897,
+      "start_epoch": 1787928192.266217,
+      "end_epoch": 1787928343.369673,
+      "max_speed_mps": 1.3262630076470896,
+      "max_acceleration_mps2": 3.258052033140892,
+      "pva_to_position_hold_epoch": 1787928261.442529,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.20000004768371582,
+        "p95_s": 0.23336446285247803,
+        "max_s": 1.1920819282531738,
+        "gaps_ge_0_2_s": 380
+      },
+      "target_enu_m": [
+        54.86401081296854,
+        -22.829593021218564,
+        12.0
+      ],
+      "minimum_target_error_m": 0.08416141788460064,
+      "minimum_target_error_epoch": 1787928317.1408029,
+      "final_target_error_m": 2.620668528180702,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928260.528571,
+          "end_epoch": 1787928340.826019,
+          "duration_s": 80.30580615997314
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928260.132542,
+          "end_epoch": 1787928341.157397,
+          "duration_s": 81.03321313858032
+        }
+      ]
+    },
+    "UAV12": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_11/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.153567,
+      "samples": 15869,
+      "start_epoch": 1787928192.259396,
+      "end_epoch": 1787928343.351103,
+      "max_speed_mps": 1.3118860146779012,
+      "max_acceleration_mps2": 3.8052354407068383,
+      "pva_to_position_hold_epoch": 1787928260.838498,
+      "setpoint_intervals": {
+        "count": 751,
+        "median_s": 0.19999909400939941,
+        "p95_s": 0.23335647583007812,
+        "max_s": 1.059356927871704,
+        "gaps_ge_0_2_s": 374
+      },
+      "target_enu_m": [
+        54.83401099296822,
+        -27.829503021488563,
+        12.0
+      ],
+      "minimum_target_error_m": 0.0825062740078386,
+      "minimum_target_error_epoch": 1787928323.2923641,
+      "final_target_error_m": 2.5818019181055645,
+      "within_0_2_m_intervals": [
+        {
+          "start_epoch": 1787928260.9590201,
+          "end_epoch": 1787928340.8316522,
+          "duration_s": 79.88101303577423
+        }
+      ],
+      "within_0_5_m_intervals": [
+        {
+          "start_epoch": 1787928260.0029302,
+          "end_epoch": 1787928341.1748111,
+          "duration_s": 81.18026196956635
+        }
+      ]
+    },
+    "UAV13": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_12/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.156367,
+      "samples": 15850,
+      "start_epoch": 1787928192.262298,
+      "end_epoch": 1787928343.373965,
+      "max_speed_mps": 0.7523032537676639,
+      "max_acceleration_mps2": 2.179270962453181,
+      "pva_to_position_hold_epoch": null,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.20000052452087402,
+        "p95_s": 0.20025216341018676,
+        "max_s": 1.0531511306762695,
+        "gaps_ge_0_2_s": 379
+      }
+    },
+    "UAV14": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_13/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.169046,
+      "samples": 15828,
+      "start_epoch": 1787928192.274478,
+      "end_epoch": 1787928343.354733,
+      "max_speed_mps": 0.7351437677743523,
+      "max_acceleration_mps2": 2.135546300509772,
+      "pva_to_position_hold_epoch": null,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.20000648498535156,
+        "p95_s": 0.23343993425369264,
+        "max_s": 1.1025331020355225,
+        "gaps_ge_0_2_s": 388
+      }
+    },
+    "UAV15": {
+      "ulog": "/home/ub20tg/catkin_swarm6-2/.ros_home/sitl_iris_14/log/2026-08-28/14_40_55.ulg",
+      "utc_offset_s": 1787776009.1626792,
+      "samples": 15793,
+      "start_epoch": 1787928192.2587993,
+      "end_epoch": 1787928343.3603241,
+      "max_speed_mps": 0.7451621048373892,
+      "max_acceleration_mps2": 2.219266752228635,
+      "pva_to_position_hold_epoch": null,
+      "setpoint_intervals": {
+        "count": 752,
+        "median_s": 0.19999992847442627,
+        "p95_s": 0.20013990402221682,
+        "max_s": 1.098494052886963,
+        "gaps_ge_0_2_s": 376
+      }
+    }
+  },
+  "pairs": {
+    "UAV1-UAV2": {
+      "minimum_3d_m": 1.2425512678563146,
+      "minimum_horizontal_m": 1.24250240726643,
+      "minimum_epoch": 1787928231.7771792,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 1.4999985694885254
+    },
+    "UAV1-UAV3": {
+      "minimum_3d_m": 1.9638691370374315,
+      "minimum_horizontal_m": 1.9535226315562748,
+      "minimum_epoch": 1787928260.8271515,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV4": {
+      "minimum_3d_m": 4.8916837426561335,
+      "minimum_horizontal_m": 4.891673611850125,
+      "minimum_epoch": 1787928217.5271928,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV5": {
+      "minimum_3d_m": 7.039423788305053,
+      "minimum_horizontal_m": 7.039159169203354,
+      "minimum_epoch": 1787928203.5272062,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV6": {
+      "minimum_3d_m": 4.56178719286417,
+      "minimum_horizontal_m": 4.561768406691034,
+      "minimum_epoch": 1787928250.827161,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV7": {
+      "minimum_3d_m": 4.945752752053799,
+      "minimum_horizontal_m": 4.9426405545697945,
+      "minimum_epoch": 1787928269.4271433,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV8": {
+      "minimum_3d_m": 9.938917800973858,
+      "minimum_horizontal_m": 9.9381545358053,
+      "minimum_epoch": 1787928270.0271428,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV9": {
+      "minimum_3d_m": 7.039376130477821,
+      "minimum_horizontal_m": 7.0393728506953845,
+      "minimum_epoch": 1787928329.1770864,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV10": {
+      "minimum_3d_m": 4.835959416154894,
+      "minimum_horizontal_m": 4.822944370126374,
+      "minimum_epoch": 1787928268.827144,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV11": {
+      "minimum_3d_m": 6.963443455878591,
+      "minimum_horizontal_m": 6.953828355384941,
+      "minimum_epoch": 1787928268.827144,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV12": {
+      "minimum_3d_m": 11.04826926633372,
+      "minimum_horizontal_m": 11.046545551394338,
+      "minimum_epoch": 1787928269.2271435,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV13": {
+      "minimum_3d_m": 13.01554035613002,
+      "minimum_horizontal_m": 8.175760513381162,
+      "minimum_epoch": 1787928225.2771854,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV14": {
+      "minimum_3d_m": 10.617870953251705,
+      "minimum_horizontal_m": 3.5651341427732075,
+      "minimum_epoch": 1787928227.6271832,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV1-UAV15": {
+      "minimum_3d_m": 10.016429243061658,
+      "minimum_horizontal_m": 1.0879805165122964,
+      "minimum_epoch": 1787928229.1271818,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV3": {
+      "minimum_3d_m": 4.758211627964953,
+      "minimum_horizontal_m": 4.758210018208929,
+      "minimum_epoch": 1787928229.827181,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV4": {
+      "minimum_3d_m": 3.7964203097605114,
+      "minimum_horizontal_m": 3.7964201477085866,
+      "minimum_epoch": 1787928224.0271866,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV5": {
+      "minimum_3d_m": 4.743404920513632,
+      "minimum_horizontal_m": 4.743404054842356,
+      "minimum_epoch": 1787928210.2271998,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV6": {
+      "minimum_3d_m": 4.826775350182694,
+      "minimum_horizontal_m": 4.807743994647955,
+      "minimum_epoch": 1787928264.577148,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV7": {
+      "minimum_3d_m": 8.689278398321102,
+      "minimum_horizontal_m": 8.689278381490531,
+      "minimum_epoch": 1787928224.0771866,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV8": {
+      "minimum_3d_m": 9.158322753177751,
+      "minimum_horizontal_m": 9.158310230497825,
+      "minimum_epoch": 1787928225.5771852,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV9": {
+      "minimum_3d_m": 9.759535785729867,
+      "minimum_horizontal_m": 9.743706562502284,
+      "minimum_epoch": 1787928264.477148,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV10": {
+      "minimum_3d_m": 10.782260705959974,
+      "minimum_horizontal_m": 10.764354117200702,
+      "minimum_epoch": 1787928264.427148,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV11": {
+      "minimum_3d_m": 13.741621400191836,
+      "minimum_horizontal_m": 13.74162126176929,
+      "minimum_epoch": 1787928224.4771862,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV12": {
+      "minimum_3d_m": 15.60790716034338,
+      "minimum_horizontal_m": 15.607900830848147,
+      "minimum_epoch": 1787928208.4272015,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV13": {
+      "minimum_3d_m": 14.394891694420336,
+      "minimum_horizontal_m": 10.232464684079504,
+      "minimum_epoch": 1787928225.4271853,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV14": {
+      "minimum_3d_m": 11.34554626157999,
+      "minimum_horizontal_m": 5.361153296820773,
+      "minimum_epoch": 1787928227.1271837,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV2-UAV15": {
+      "minimum_3d_m": 9.986048646085298,
+      "minimum_horizontal_m": 0.9584272862441968,
+      "minimum_epoch": 1787928227.927183,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV4": {
+      "minimum_3d_m": 3.9055635847988963,
+      "minimum_horizontal_m": 3.9055143636876952,
+      "minimum_epoch": 1787928244.1271675,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV5": {
+      "minimum_3d_m": 3.4321487807468873,
+      "minimum_horizontal_m": 3.432147363845163,
+      "minimum_epoch": 1787928232.4271786,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV6": {
+      "minimum_3d_m": 4.968660577218869,
+      "minimum_horizontal_m": 4.968061039202896,
+      "minimum_epoch": 1787928199.52721,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV7": {
+      "minimum_3d_m": 6.961156144712865,
+      "minimum_horizontal_m": 6.931949910324946,
+      "minimum_epoch": 1787928262.9271495,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV8": {
+      "minimum_3d_m": 8.35207901441768,
+      "minimum_horizontal_m": 8.352067594661648,
+      "minimum_epoch": 1787928238.5271728,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV9": {
+      "minimum_3d_m": 10.031412262976337,
+      "minimum_horizontal_m": 10.030740575716017,
+      "minimum_epoch": 1787928195.4772139,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV10": {
+      "minimum_3d_m": 9.717497187758264,
+      "minimum_horizontal_m": 9.688759359564775,
+      "minimum_epoch": 1787928262.8271496,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV11": {
+      "minimum_3d_m": 10.986982325913019,
+      "minimum_horizontal_m": 10.960202912789216,
+      "minimum_epoch": 1787928262.8271496,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV12": {
+      "minimum_3d_m": 14.006784721227996,
+      "minimum_horizontal_m": 13.991574273118413,
+      "minimum_epoch": 1787928262.9271495,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV13": {
+      "minimum_3d_m": 18.136562306083565,
+      "minimum_horizontal_m": 15.044496009120836,
+      "minimum_epoch": 1787928225.777185,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV14": {
+      "minimum_3d_m": 14.279107417353465,
+      "minimum_horizontal_m": 10.181939678029112,
+      "minimum_epoch": 1787928227.1271837,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV3-UAV15": {
+      "minimum_3d_m": 11.31866531947002,
+      "minimum_horizontal_m": 5.357976260709054,
+      "minimum_epoch": 1787928228.7271821,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV5": {
+      "minimum_3d_m": 4.183199286251624,
+      "minimum_horizontal_m": 4.183198793464504,
+      "minimum_epoch": 1787928232.8771782,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV6": {
+      "minimum_3d_m": 1.0578344844088636,
+      "minimum_horizontal_m": 1.0578289087226547,
+      "minimum_epoch": 1787928228.777182,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 1.0499989986419678,
+      "duration_below_1_35_s": 3.4499967098236084
+    },
+    "UAV4-UAV7": {
+      "minimum_3d_m": 4.633504744436271,
+      "minimum_horizontal_m": 4.633499187089126,
+      "minimum_epoch": 1787928252.3771596,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV8": {
+      "minimum_3d_m": 4.706613869293527,
+      "minimum_horizontal_m": 4.706546134362473,
+      "minimum_epoch": 1787928257.227155,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV9": {
+      "minimum_3d_m": 7.040495384671921,
+      "minimum_horizontal_m": 7.040458044841193,
+      "minimum_epoch": 1787928228.927182,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV10": {
+      "minimum_3d_m": 9.43558840858656,
+      "minimum_horizontal_m": 9.435566827336508,
+      "minimum_epoch": 1787928215.4771948,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV11": {
+      "minimum_3d_m": 9.396252342498748,
+      "minimum_horizontal_m": 9.396228462493815,
+      "minimum_epoch": 1787928234.227177,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV12": {
+      "minimum_3d_m": 11.087047207585217,
+      "minimum_horizontal_m": 11.087009910226651,
+      "minimum_epoch": 1787928269.5771432,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV13": {
+      "minimum_3d_m": 13.117995430505497,
+      "minimum_horizontal_m": 8.354706486629407,
+      "minimum_epoch": 1787928218.2271922,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV14": {
+      "minimum_3d_m": 10.790296549757048,
+      "minimum_horizontal_m": 4.151394246999695,
+      "minimum_epoch": 1787928221.2271893,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV4-UAV15": {
+      "minimum_3d_m": 9.971054622223994,
+      "minimum_horizontal_m": 0.07024763875258262,
+      "minimum_epoch": 1787928224.1771865,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV6": {
+      "minimum_3d_m": 1.5583750466776511,
+      "minimum_horizontal_m": 1.558373133376239,
+      "minimum_epoch": 1787928217.7771926,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV7": {
+      "minimum_3d_m": 6.991172140120015,
+      "minimum_horizontal_m": 6.990794671186336,
+      "minimum_epoch": 1787928265.1771474,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV8": {
+      "minimum_3d_m": 4.797244796829017,
+      "minimum_horizontal_m": 4.7971071808152015,
+      "minimum_epoch": 1787928265.2271473,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV9": {
+      "minimum_3d_m": 6.0946324874765905,
+      "minimum_horizontal_m": 6.094600243625248,
+      "minimum_epoch": 1787928212.8271973,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV10": {
+      "minimum_3d_m": 11.256866899451822,
+      "minimum_horizontal_m": 11.25673887188917,
+      "minimum_epoch": 1787928205.6272042,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV11": {
+      "minimum_3d_m": 10.00585723455983,
+      "minimum_horizontal_m": 10.005599238714286,
+      "minimum_epoch": 1787928200.477209,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV12": {
+      "minimum_3d_m": 9.748227256859076,
+      "minimum_horizontal_m": 9.747998425953261,
+      "minimum_epoch": 1787928265.1771474,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV13": {
+      "minimum_3d_m": 15.943210178042174,
+      "minimum_horizontal_m": 15.940322659148169,
+      "minimum_epoch": 1787928193.0772161,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV14": {
+      "minimum_3d_m": 13.009003005892266,
+      "minimum_horizontal_m": 8.344032407525285,
+      "minimum_epoch": 1787928219.377191,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV5-UAV15": {
+      "minimum_3d_m": 10.777123767256219,
+      "minimum_horizontal_m": 4.152219008624766,
+      "minimum_epoch": 1787928222.577188,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV7": {
+      "minimum_3d_m": 3.0714862059422665,
+      "minimum_horizontal_m": 3.0714792665053494,
+      "minimum_epoch": 1787928233.5271776,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV8": {
+      "minimum_3d_m": 3.2058303411266733,
+      "minimum_horizontal_m": 3.205827471015461,
+      "minimum_epoch": 1787928222.1271884,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV9": {
+      "minimum_3d_m": 4.935890511926593,
+      "minimum_horizontal_m": 4.9358861269048475,
+      "minimum_epoch": 1787928265.577147,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV10": {
+      "minimum_3d_m": 6.877477224927488,
+      "minimum_horizontal_m": 6.877477183764362,
+      "minimum_epoch": 1787928266.3771462,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV11": {
+      "minimum_3d_m": 8.083523977363738,
+      "minimum_horizontal_m": 8.083502599189545,
+      "minimum_epoch": 1787928233.8271773,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV12": {
+      "minimum_3d_m": 8.975198244064108,
+      "minimum_horizontal_m": 8.97519117277625,
+      "minimum_epoch": 1787928216.6271937,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV13": {
+      "minimum_3d_m": 16.020137648061016,
+      "minimum_horizontal_m": 12.427839127058826,
+      "minimum_epoch": 1787928220.1271904,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV14": {
+      "minimum_3d_m": 12.466391201489028,
+      "minimum_horizontal_m": 7.488596534981953,
+      "minimum_epoch": 1787928220.9271896,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV6-UAV15": {
+      "minimum_3d_m": 10.261590697728693,
+      "minimum_horizontal_m": 2.554294201446246,
+      "minimum_epoch": 1787928222.1771884,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV8": {
+      "minimum_3d_m": 4.211670176405374,
+      "minimum_horizontal_m": 4.2116500128427585,
+      "minimum_epoch": 1787928238.7271726,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV9": {
+      "minimum_3d_m": 2.380141826777682,
+      "minimum_horizontal_m": 2.3801346278426863,
+      "minimum_epoch": 1787928229.5271814,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV10": {
+      "minimum_3d_m": 4.578487577392752,
+      "minimum_horizontal_m": 4.578461638787397,
+      "minimum_epoch": 1787928215.4271948,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV11": {
+      "minimum_3d_m": 4.806244944160416,
+      "minimum_horizontal_m": 4.806219515221283,
+      "minimum_epoch": 1787928234.2771769,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV12": {
+      "minimum_3d_m": 6.965978251022635,
+      "minimum_horizontal_m": 6.965978055817267,
+      "minimum_epoch": 1787928269.2271435,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV13": {
+      "minimum_3d_m": 10.05743702081888,
+      "minimum_horizontal_m": 10.057342055917806,
+      "minimum_epoch": 1787928192.3272169,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV14": {
+      "minimum_3d_m": 10.070589356205446,
+      "minimum_horizontal_m": 1.343861927557594,
+      "minimum_epoch": 1787928216.377194,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV7-UAV15": {
+      "minimum_3d_m": 10.352070059093514,
+      "minimum_horizontal_m": 2.8727196933175936,
+      "minimum_epoch": 1787928219.527191,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV9": {
+      "minimum_3d_m": 1.4573108418050926,
+      "minimum_horizontal_m": 1.4571682574571658,
+      "minimum_epoch": 1787928217.227193,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV10": {
+      "minimum_3d_m": 7.069879647944409,
+      "minimum_horizontal_m": 7.069274963178683,
+      "minimum_epoch": 1787928205.2272046,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV11": {
+      "minimum_3d_m": 4.918328320757147,
+      "minimum_horizontal_m": 4.9164633088576775,
+      "minimum_epoch": 1787928205.827204,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV12": {
+      "minimum_3d_m": 4.894182618291461,
+      "minimum_horizontal_m": 4.894182597974361,
+      "minimum_epoch": 1787928269.5771432,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV13": {
+      "minimum_3d_m": 11.2285254436344,
+      "minimum_horizontal_m": 11.22282829549697,
+      "minimum_epoch": 1787928193.0772161,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV14": {
+      "minimum_3d_m": 10.03269135259582,
+      "minimum_horizontal_m": 10.032347576603891,
+      "minimum_epoch": 1787928192.277217,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV8-UAV15": {
+      "minimum_3d_m": 10.049507774836313,
+      "minimum_horizontal_m": 1.2867165130355296,
+      "minimum_epoch": 1787928216.6771936,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV9-UAV10": {
+      "minimum_3d_m": 1.1966598182730095,
+      "minimum_horizontal_m": 1.19656822882572,
+      "minimum_epoch": 1787928240.527171,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 2.0499980449676514
+    },
+    "UAV9-UAV11": {
+      "minimum_3d_m": 2.407877213444583,
+      "minimum_horizontal_m": 2.4078730990196453,
+      "minimum_epoch": 1787928226.2271845,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV9-UAV12": {
+      "minimum_3d_m": 4.307621517173524,
+      "minimum_horizontal_m": 4.307620830126638,
+      "minimum_epoch": 1787928215.327195,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV9-UAV13": {
+      "minimum_3d_m": 14.17270771570859,
+      "minimum_horizontal_m": 14.17001172401829,
+      "minimum_epoch": 1787928193.0772161,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV9-UAV14": {
+      "minimum_3d_m": 11.207003962567017,
+      "minimum_horizontal_m": 11.206505666723599,
+      "minimum_epoch": 1787928192.7272165,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV9-UAV15": {
+      "minimum_3d_m": 10.039043873589097,
+      "minimum_horizontal_m": 10.037246510218372,
+      "minimum_epoch": 1787928192.277217,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV10-UAV11": {
+      "minimum_3d_m": 4.923154837446933,
+      "minimum_horizontal_m": 4.92313175248137,
+      "minimum_epoch": 1787928255.077157,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV10-UAV12": {
+      "minimum_3d_m": 9.92371175532725,
+      "minimum_horizontal_m": 9.923706095802858,
+      "minimum_epoch": 1787928249.0771627,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV10-UAV13": {
+      "minimum_3d_m": 5.045059866874839,
+      "minimum_horizontal_m": 5.044345223794932,
+      "minimum_epoch": 1787928192.3272169,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV10-UAV14": {
+      "minimum_3d_m": 7.116960148330066,
+      "minimum_horizontal_m": 7.116932740910653,
+      "minimum_epoch": 1787928192.6272166,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV10-UAV15": {
+      "minimum_3d_m": 11.216192053483208,
+      "minimum_horizontal_m": 11.216035675496455,
+      "minimum_epoch": 1787928192.5272167,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV11-UAV12": {
+      "minimum_3d_m": 4.7331141884733965,
+      "minimum_horizontal_m": 4.733112592648044,
+      "minimum_epoch": 1787928215.377195,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV11-UAV13": {
+      "minimum_3d_m": 7.095985627791846,
+      "minimum_horizontal_m": 7.095425853973158,
+      "minimum_epoch": 1787928192.277217,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV11-UAV14": {
+      "minimum_3d_m": 5.040864881555098,
+      "minimum_horizontal_m": 5.040673571421458,
+      "minimum_epoch": 1787928192.277217,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV11-UAV15": {
+      "minimum_3d_m": 7.12325125375041,
+      "minimum_horizontal_m": 7.122923527490814,
+      "minimum_epoch": 1787928192.277217,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV12-UAV13": {
+      "minimum_3d_m": 11.201193438260162,
+      "minimum_horizontal_m": 11.195884188618212,
+      "minimum_epoch": 1787928193.0772161,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV12-UAV14": {
+      "minimum_3d_m": 7.078803238223613,
+      "minimum_horizontal_m": 7.078778377511228,
+      "minimum_epoch": 1787928192.7272165,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV12-UAV15": {
+      "minimum_3d_m": 5.025025061916742,
+      "minimum_horizontal_m": 5.024075557447111,
+      "minimum_epoch": 1787928192.3272169,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV13-UAV14": {
+      "minimum_3d_m": 4.9087128800808495,
+      "minimum_horizontal_m": 4.903933483050062,
+      "minimum_epoch": 1787928342.7770734,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV13-UAV15": {
+      "minimum_3d_m": 9.991857033068433,
+      "minimum_horizontal_m": 9.9899341986431,
+      "minimum_epoch": 1787928206.927203,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    },
+    "UAV14-UAV15": {
+      "minimum_3d_m": 4.978525567839214,
+      "minimum_horizontal_m": 4.978308638110881,
+      "minimum_epoch": 1787928226.877184,
+      "duration_below_1_0_s": 0.0,
+      "duration_below_1_1_s": 0.0,
+      "duration_below_1_35_s": 0.0
+    }
+  },
+  "structured_planner": {
+    "UAV1": {
+      "first_epoch": 1787928197.382067,
+      "last_epoch": 1787928274.854712,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 9.73451,
+          "time_epoch": 1787928264.655053,
+          "level": "SAFE",
+          "warning_m": 1.598277,
+          "emergency_m": 1.348277
+        },
+        "UAV11": {
+          "distance_m": 10.820444,
+          "time_epoch": 1787928266.055176,
+          "level": "SAFE",
+          "warning_m": 1.827854,
+          "emergency_m": 1.577854
+        },
+        "UAV2": {
+          "distance_m": 1.161786,
+          "time_epoch": 1787928239.494714,
+          "level": "WARNING",
+          "warning_m": 1.380277,
+          "emergency_m": 1.130277
+        },
+        "UAV4": {
+          "distance_m": 3.898035,
+          "time_epoch": 1787928225.294697,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV7": {
+          "distance_m": 7.950106,
+          "time_epoch": 1787928237.974705,
+          "level": "SAFE",
+          "warning_m": 1.47657,
+          "emergency_m": 1.22657
+        },
+        "UAV8": {
+          "distance_m": 10.135498,
+          "time_epoch": 1787928233.014699,
+          "level": "SAFE",
+          "warning_m": 1.47878,
+          "emergency_m": 1.22878
+        },
+        "UAV12": {
+          "distance_m": 15.261417,
+          "time_epoch": 1787928264.334829,
+          "level": "SAFE",
+          "warning_m": 1.482516,
+          "emergency_m": 1.232516
+        },
+        "UAV3": {
+          "distance_m": 1.938168,
+          "time_epoch": 1787928265.254707,
+          "level": "SAFE",
+          "warning_m": 1.401883,
+          "emergency_m": 1.151883
+        },
+        "UAV5": {
+          "distance_m": 6.515729,
+          "time_epoch": 1787928212.814699,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV6": {
+          "distance_m": 4.352634,
+          "time_epoch": 1787928245.374753,
+          "level": "SAFE",
+          "warning_m": 1.378453,
+          "emergency_m": 1.128453
+        },
+        "UAV9": {
+          "distance_m": 9.209187,
+          "time_epoch": 1787928264.85471,
+          "level": "SAFE",
+          "warning_m": 1.591147,
+          "emergency_m": 1.341147
+        }
+      }
+    },
+    "UAV2": {
+      "first_epoch": 1787928197.304809,
+      "last_epoch": 1787928270.743066,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV4": {
+          "distance_m": 3.159889,
+          "time_epoch": 1787928228.463052,
+          "level": "SAFE",
+          "warning_m": 1.496893,
+          "emergency_m": 1.246893
+        },
+        "UAV10": {
+          "distance_m": 12.455823,
+          "time_epoch": 1787928264.503057,
+          "level": "SAFE",
+          "warning_m": 1.837393,
+          "emergency_m": 1.587393
+        },
+        "UAV11": {
+          "distance_m": 13.393245,
+          "time_epoch": 1787928232.183036,
+          "level": "SAFE",
+          "warning_m": 1.358151,
+          "emergency_m": 1.108151
+        },
+        "UAV7": {
+          "distance_m": 7.967311,
+          "time_epoch": 1787928231.743053,
+          "level": "SAFE",
+          "warning_m": 1.491739,
+          "emergency_m": 1.241739
+        },
+        "UAV8": {
+          "distance_m": 8.882774,
+          "time_epoch": 1787928229.503491,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV1": {
+          "distance_m": 1.160908,
+          "time_epoch": 1787928239.503068,
+          "level": "WARNING",
+          "warning_m": 1.380594,
+          "emergency_m": 1.130594
+        },
+        "UAV5": {
+          "distance_m": 3.877166,
+          "time_epoch": 1787928219.703074,
+          "level": "SAFE",
+          "warning_m": 1.370281,
+          "emergency_m": 1.120281
+        },
+        "UAV12": {
+          "distance_m": 14.672977,
+          "time_epoch": 1787928212.86307,
+          "level": "SAFE",
+          "warning_m": 1.405929,
+          "emergency_m": 1.155929
+        },
+        "UAV3": {
+          "distance_m": 4.67072,
+          "time_epoch": 1787928233.303081,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV9": {
+          "distance_m": 10.294252,
+          "time_epoch": 1787928228.622999,
+          "level": "SAFE",
+          "warning_m": 1.389715,
+          "emergency_m": 1.139715
+        },
+        "UAV6": {
+          "distance_m": 5.225157,
+          "time_epoch": 1787928267.58318,
+          "level": "SAFE",
+          "warning_m": 1.366442,
+          "emergency_m": 1.116442
+        }
+      }
+    },
+    "UAV3": {
+      "first_epoch": 1787928197.359862,
+      "last_epoch": 1787928269.249735,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 10.428953,
+          "time_epoch": 1787928263.289689,
+          "level": "SAFE",
+          "warning_m": 1.629,
+          "emergency_m": 1.379
+        },
+        "UAV11": {
+          "distance_m": 11.161065,
+          "time_epoch": 1787928265.6499,
+          "level": "SAFE",
+          "warning_m": 1.537477,
+          "emergency_m": 1.287477
+        },
+        "UAV2": {
+          "distance_m": 4.670972,
+          "time_epoch": 1787928233.04971,
+          "level": "SAFE",
+          "warning_m": 1.35006,
+          "emergency_m": 1.10006
+        },
+        "UAV4": {
+          "distance_m": 2.979125,
+          "time_epoch": 1787928250.289612,
+          "level": "SAFE",
+          "warning_m": 1.418777,
+          "emergency_m": 1.168777
+        },
+        "UAV7": {
+          "distance_m": 7.321567,
+          "time_epoch": 1787928250.569715,
+          "level": "SAFE",
+          "warning_m": 1.491493,
+          "emergency_m": 1.241493
+        },
+        "UAV8": {
+          "distance_m": 7.937303,
+          "time_epoch": 1787928246.170173,
+          "level": "SAFE",
+          "warning_m": 1.4622,
+          "emergency_m": 1.2122
+        },
+        "UAV12": {
+          "distance_m": 14.049652,
+          "time_epoch": 1787928222.530064,
+          "level": "SAFE",
+          "warning_m": 1.379829,
+          "emergency_m": 1.129829
+        },
+        "UAV5": {
+          "distance_m": 3.340772,
+          "time_epoch": 1787928233.009702,
+          "level": "SAFE",
+          "warning_m": 1.434443,
+          "emergency_m": 1.184443
+        },
+        "UAV9": {
+          "distance_m": 9.926409,
+          "time_epoch": 1787928212.689898,
+          "level": "SAFE",
+          "warning_m": 1.429944,
+          "emergency_m": 1.179944
+        },
+        "UAV1": {
+          "distance_m": 1.938914,
+          "time_epoch": 1787928265.249721,
+          "level": "SAFE",
+          "warning_m": 1.401416,
+          "emergency_m": 1.151416
+        },
+        "UAV6": {
+          "distance_m": 4.850559,
+          "time_epoch": 1787928212.689898,
+          "level": "SAFE",
+          "warning_m": 1.427029,
+          "emergency_m": 1.177029
+        }
+      }
+    },
+    "UAV4": {
+      "first_epoch": 1787928197.320333,
+      "last_epoch": 1787928266.358823,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV2": {
+          "distance_m": 3.158617,
+          "time_epoch": 1787928228.518752,
+          "level": "SAFE",
+          "warning_m": 1.493906,
+          "emergency_m": 1.243906
+        },
+        "UAV7": {
+          "distance_m": 3.901168,
+          "time_epoch": 1787928259.758695,
+          "level": "SAFE",
+          "warning_m": 1.376484,
+          "emergency_m": 1.126484
+        },
+        "UAV8": {
+          "distance_m": 4.229907,
+          "time_epoch": 1787928261.438728,
+          "level": "SAFE",
+          "warning_m": 1.442362,
+          "emergency_m": 1.192362
+        },
+        "UAV10": {
+          "distance_m": 8.896752,
+          "time_epoch": 1787928209.518959,
+          "level": "SAFE",
+          "warning_m": 1.37969,
+          "emergency_m": 1.12969
+        },
+        "UAV11": {
+          "distance_m": 8.700709,
+          "time_epoch": 1787928238.518734,
+          "level": "SAFE",
+          "warning_m": 1.445412,
+          "emergency_m": 1.195412
+        },
+        "UAV1": {
+          "distance_m": 3.897442,
+          "time_epoch": 1787928225.398734,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV12": {
+          "distance_m": 10.834387,
+          "time_epoch": 1787928235.398735,
+          "level": "SAFE",
+          "warning_m": 1.573253,
+          "emergency_m": 1.323253
+        },
+        "UAV3": {
+          "distance_m": 2.978676,
+          "time_epoch": 1787928250.278857,
+          "level": "SAFE",
+          "warning_m": 1.422185,
+          "emergency_m": 1.172185
+        },
+        "UAV5": {
+          "distance_m": 4.180455,
+          "time_epoch": 1787928244.279146,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV6": {
+          "distance_m": 1.219535,
+          "time_epoch": 1787928234.718859,
+          "level": "WARNING",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV9": {
+          "distance_m": 6.155971,
+          "time_epoch": 1787928228.758682,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        }
+      }
+    },
+    "UAV5": {
+      "first_epoch": 1787928197.374972,
+      "last_epoch": 1787928270.694965,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 10.791001,
+          "time_epoch": 1787928209.494946,
+          "level": "SAFE",
+          "warning_m": 1.351301,
+          "emergency_m": 1.101301
+        },
+        "UAV11": {
+          "distance_m": 9.888579,
+          "time_epoch": 1787928210.454947,
+          "level": "SAFE",
+          "warning_m": 1.353118,
+          "emergency_m": 1.103118
+        },
+        "UAV2": {
+          "distance_m": 3.876444,
+          "time_epoch": 1787928220.054953,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV4": {
+          "distance_m": 4.180469,
+          "time_epoch": 1787928244.975307,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV7": {
+          "distance_m": 7.034566,
+          "time_epoch": 1787928212.855363,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV8": {
+          "distance_m": 4.751276,
+          "time_epoch": 1787928232.854947,
+          "level": "SAFE",
+          "warning_m": 1.37667,
+          "emergency_m": 1.12667
+        },
+        "UAV12": {
+          "distance_m": 9.946634,
+          "time_epoch": 1787928209.534956,
+          "level": "SAFE",
+          "warning_m": 1.354084,
+          "emergency_m": 1.104084
+        },
+        "UAV3": {
+          "distance_m": 3.340717,
+          "time_epoch": 1787928233.054947,
+          "level": "SAFE",
+          "warning_m": 1.45663,
+          "emergency_m": 1.20663
+        },
+        "UAV9": {
+          "distance_m": 5.949143,
+          "time_epoch": 1787928216.814903,
+          "level": "SAFE",
+          "warning_m": 1.396066,
+          "emergency_m": 1.146066
+        },
+        "UAV1": {
+          "distance_m": 6.66316,
+          "time_epoch": 1787928222.375089,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV6": {
+          "distance_m": 1.395203,
+          "time_epoch": 1787928222.135158,
+          "level": "WARNING",
+          "warning_m": 1.618412,
+          "emergency_m": 1.368412
+        }
+      }
+    },
+    "UAV6": {
+      "first_epoch": 1787928197.372778,
+      "last_epoch": 1787928268.608865,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 6.167767,
+          "time_epoch": 1787928247.088797,
+          "level": "SAFE",
+          "warning_m": 1.398573,
+          "emergency_m": 1.148573
+        },
+        "UAV11": {
+          "distance_m": 7.556683,
+          "time_epoch": 1787928235.168986,
+          "level": "SAFE",
+          "warning_m": 1.569424,
+          "emergency_m": 1.319424
+        },
+        "UAV12": {
+          "distance_m": 8.367818,
+          "time_epoch": 1787928219.168876,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV2": {
+          "distance_m": 5.222711,
+          "time_epoch": 1787928267.688877,
+          "level": "SAFE",
+          "warning_m": 1.385578,
+          "emergency_m": 1.135578
+        },
+        "UAV4": {
+          "distance_m": 1.219371,
+          "time_epoch": 1787928234.728857,
+          "level": "WARNING",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV5": {
+          "distance_m": 1.394555,
+          "time_epoch": 1787928221.48885,
+          "level": "SAFE",
+          "warning_m": 1.385383,
+          "emergency_m": 1.135383
+        },
+        "UAV7": {
+          "distance_m": 2.336118,
+          "time_epoch": 1787928237.968973,
+          "level": "SAFE",
+          "warning_m": 1.440326,
+          "emergency_m": 1.190326
+        },
+        "UAV8": {
+          "distance_m": 2.875377,
+          "time_epoch": 1787928226.128932,
+          "level": "SAFE",
+          "warning_m": 1.357314,
+          "emergency_m": 1.107314
+        },
+        "UAV9": {
+          "distance_m": 4.137383,
+          "time_epoch": 1787928212.768865,
+          "level": "SAFE",
+          "warning_m": 1.350664,
+          "emergency_m": 1.100664
+        },
+        "UAV1": {
+          "distance_m": 4.353612,
+          "time_epoch": 1787928245.368895,
+          "level": "SAFE",
+          "warning_m": 1.378644,
+          "emergency_m": 1.128644
+        },
+        "UAV3": {
+          "distance_m": 4.850603,
+          "time_epoch": 1787928212.728852,
+          "level": "SAFE",
+          "warning_m": 1.428025,
+          "emergency_m": 1.178025
+        }
+      }
+    },
+    "UAV7": {
+      "first_epoch": 1787928197.358565,
+      "last_epoch": 1787928266.732939,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 4.24913,
+          "time_epoch": 1787928222.652919,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV11": {
+          "distance_m": 4.003549,
+          "time_epoch": 1787928238.532925,
+          "level": "SAFE",
+          "warning_m": 1.477593,
+          "emergency_m": 1.227593
+        },
+        "UAV2": {
+          "distance_m": 7.97095,
+          "time_epoch": 1787928231.772897,
+          "level": "SAFE",
+          "warning_m": 1.493114,
+          "emergency_m": 1.243114
+        },
+        "UAV4": {
+          "distance_m": 3.900752,
+          "time_epoch": 1787928259.772907,
+          "level": "SAFE",
+          "warning_m": 1.383529,
+          "emergency_m": 1.133529
+        },
+        "UAV8": {
+          "distance_m": 4.161515,
+          "time_epoch": 1787928239.692927,
+          "level": "SAFE",
+          "warning_m": 1.355598,
+          "emergency_m": 1.105598
+        },
+        "UAV12": {
+          "distance_m": 7.018899,
+          "time_epoch": 1787928263.212913,
+          "level": "SAFE",
+          "warning_m": 1.460766,
+          "emergency_m": 1.210766
+        },
+        "UAV3": {
+          "distance_m": 7.327362,
+          "time_epoch": 1787928266.172926,
+          "level": "SAFE",
+          "warning_m": 1.570108,
+          "emergency_m": 1.320108
+        },
+        "UAV5": {
+          "distance_m": 7.034603,
+          "time_epoch": 1787928212.852907,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV9": {
+          "distance_m": 1.579101,
+          "time_epoch": 1787928234.932898,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV1": {
+          "distance_m": 7.950336,
+          "time_epoch": 1787928237.972905,
+          "level": "SAFE",
+          "warning_m": 1.476959,
+          "emergency_m": 1.226959
+        },
+        "UAV6": {
+          "distance_m": 2.335457,
+          "time_epoch": 1787928237.972905,
+          "level": "SAFE",
+          "warning_m": 1.438318,
+          "emergency_m": 1.188318
+        }
+      }
+    },
+    "UAV8": {
+      "first_epoch": 1787928197.328685,
+      "last_epoch": 1787928268.848943,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV2": {
+          "distance_m": 8.883327,
+          "time_epoch": 1787928229.648653,
+          "level": "SAFE",
+          "warning_m": 1.385985,
+          "emergency_m": 1.135985
+        },
+        "UAV4": {
+          "distance_m": 4.230449,
+          "time_epoch": 1787928261.448714,
+          "level": "SAFE",
+          "warning_m": 1.447525,
+          "emergency_m": 1.197525
+        },
+        "UAV7": {
+          "distance_m": 4.161521,
+          "time_epoch": 1787928239.888615,
+          "level": "SAFE",
+          "warning_m": 1.357443,
+          "emergency_m": 1.107443
+        },
+        "UAV10": {
+          "distance_m": 7.060204,
+          "time_epoch": 1787928209.448659,
+          "level": "SAFE",
+          "warning_m": 1.351299,
+          "emergency_m": 1.101299
+        },
+        "UAV11": {
+          "distance_m": 4.829192,
+          "time_epoch": 1787928211.448648,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV3": {
+          "distance_m": 7.938002,
+          "time_epoch": 1787928246.168657,
+          "level": "SAFE",
+          "warning_m": 1.460467,
+          "emergency_m": 1.210467
+        },
+        "UAV1": {
+          "distance_m": 10.135436,
+          "time_epoch": 1787928233.168672,
+          "level": "SAFE",
+          "warning_m": 1.544613,
+          "emergency_m": 1.294613
+        },
+        "UAV12": {
+          "distance_m": 5.335707,
+          "time_epoch": 1787928219.368645,
+          "level": "SAFE",
+          "warning_m": 1.40846,
+          "emergency_m": 1.15846
+        },
+        "UAV5": {
+          "distance_m": 4.756195,
+          "time_epoch": 1787928232.848668,
+          "level": "SAFE",
+          "warning_m": 1.369161,
+          "emergency_m": 1.119161
+        },
+        "UAV6": {
+          "distance_m": 2.874204,
+          "time_epoch": 1787928225.888644,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV9": {
+          "distance_m": 1.231876,
+          "time_epoch": 1787928221.928644,
+          "level": "WARNING",
+          "warning_m": 1.357552,
+          "emergency_m": 1.107552
+        }
+      }
+    },
+    "UAV9": {
+      "first_epoch": 1787928197.371586,
+      "last_epoch": 1787928267.851594,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 1.044068,
+          "time_epoch": 1787928247.011535,
+          "level": "WARNING",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV11": {
+          "distance_m": 1.794318,
+          "time_epoch": 1787928232.371567,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV2": {
+          "distance_m": 10.294848,
+          "time_epoch": 1787928228.771569,
+          "level": "SAFE",
+          "warning_m": 1.379811,
+          "emergency_m": 1.129811
+        },
+        "UAV3": {
+          "distance_m": 9.926643,
+          "time_epoch": 1787928212.731576,
+          "level": "SAFE",
+          "warning_m": 1.429698,
+          "emergency_m": 1.179698
+        },
+        "UAV4": {
+          "distance_m": 6.156987,
+          "time_epoch": 1787928228.651587,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV5": {
+          "distance_m": 5.949096,
+          "time_epoch": 1787928216.811777,
+          "level": "SAFE",
+          "warning_m": 1.403075,
+          "emergency_m": 1.153075
+        },
+        "UAV7": {
+          "distance_m": 1.579029,
+          "time_epoch": 1787928234.931541,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV8": {
+          "distance_m": 1.231904,
+          "time_epoch": 1787928221.771629,
+          "level": "WARNING",
+          "warning_m": 1.379837,
+          "emergency_m": 1.129837
+        },
+        "UAV12": {
+          "distance_m": 3.76521,
+          "time_epoch": 1787928219.172025,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV1": {
+          "distance_m": 9.205534,
+          "time_epoch": 1787928265.011541,
+          "level": "SAFE",
+          "warning_m": 1.610463,
+          "emergency_m": 1.360463
+        },
+        "UAV6": {
+          "distance_m": 4.137073,
+          "time_epoch": 1787928212.772314,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        }
+      }
+    },
+    "UAV10": {
+      "first_epoch": 1787928197.357022,
+      "last_epoch": 1787928266.15688,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE",
+        "WARNING"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV11": {
+          "distance_m": 4.832696,
+          "time_epoch": 1787928234.516923,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV2": {
+          "distance_m": 12.452223,
+          "time_epoch": 1787928264.556894,
+          "level": "SAFE",
+          "warning_m": 1.837436,
+          "emergency_m": 1.587436
+        },
+        "UAV4": {
+          "distance_m": 8.898591,
+          "time_epoch": 1787928209.516933,
+          "level": "SAFE",
+          "warning_m": 1.376585,
+          "emergency_m": 1.126585
+        },
+        "UAV5": {
+          "distance_m": 10.78052,
+          "time_epoch": 1787928209.516933,
+          "level": "SAFE",
+          "warning_m": 1.350965,
+          "emergency_m": 1.100965
+        },
+        "UAV7": {
+          "distance_m": 4.16242,
+          "time_epoch": 1787928209.516933,
+          "level": "SAFE",
+          "warning_m": 1.35123,
+          "emergency_m": 1.10123
+        },
+        "UAV8": {
+          "distance_m": 6.986041,
+          "time_epoch": 1787928209.516933,
+          "level": "SAFE",
+          "warning_m": 1.352654,
+          "emergency_m": 1.102654
+        },
+        "UAV9": {
+          "distance_m": 1.036079,
+          "time_epoch": 1787928246.956866,
+          "level": "WARNING",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV1": {
+          "distance_m": 9.73258,
+          "time_epoch": 1787928264.756958,
+          "level": "SAFE",
+          "warning_m": 1.67435,
+          "emergency_m": 1.42435
+        },
+        "UAV12": {
+          "distance_m": 9.564343,
+          "time_epoch": 1787928212.877011,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV3": {
+          "distance_m": 10.431299,
+          "time_epoch": 1787928263.236891,
+          "level": "SAFE",
+          "warning_m": 1.622345,
+          "emergency_m": 1.372345
+        },
+        "UAV6": {
+          "distance_m": 6.169048,
+          "time_epoch": 1787928247.436967,
+          "level": "SAFE",
+          "warning_m": 1.526482,
+          "emergency_m": 1.276482
+        }
+      }
+    },
+    "UAV11": {
+      "first_epoch": 1787928197.34247,
+      "last_epoch": 1787928266.462496,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV10": {
+          "distance_m": 4.827252,
+          "time_epoch": 1787928234.582818,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV2": {
+          "distance_m": 13.394178,
+          "time_epoch": 1787928232.182503,
+          "level": "SAFE",
+          "warning_m": 1.354008,
+          "emergency_m": 1.104008
+        },
+        "UAV4": {
+          "distance_m": 8.700496,
+          "time_epoch": 1787928238.502523,
+          "level": "SAFE",
+          "warning_m": 1.449466,
+          "emergency_m": 1.199466
+        },
+        "UAV7": {
+          "distance_m": 4.003851,
+          "time_epoch": 1787928238.4625,
+          "level": "SAFE",
+          "warning_m": 1.428044,
+          "emergency_m": 1.178044
+        },
+        "UAV8": {
+          "distance_m": 4.082817,
+          "time_epoch": 1787928209.422498,
+          "level": "SAFE",
+          "warning_m": 1.351368,
+          "emergency_m": 1.101368
+        },
+        "UAV3": {
+          "distance_m": 11.160758,
+          "time_epoch": 1787928265.902512,
+          "level": "SAFE",
+          "warning_m": 1.607566,
+          "emergency_m": 1.357566
+        },
+        "UAV5": {
+          "distance_m": 9.888093,
+          "time_epoch": 1787928210.462495,
+          "level": "SAFE",
+          "warning_m": 1.363438,
+          "emergency_m": 1.113438
+        },
+        "UAV9": {
+          "distance_m": 1.79427,
+          "time_epoch": 1787928232.422507,
+          "level": "SAFE",
+          "warning_m": 1.359122,
+          "emergency_m": 1.109122
+        },
+        "UAV1": {
+          "distance_m": 10.822505,
+          "time_epoch": 1787928265.902512,
+          "level": "SAFE",
+          "warning_m": 1.784847,
+          "emergency_m": 1.534847
+        },
+        "UAV12": {
+          "distance_m": 4.43245,
+          "time_epoch": 1787928222.542803,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV6": {
+          "distance_m": 7.560965,
+          "time_epoch": 1787928234.862507,
+          "level": "SAFE",
+          "warning_m": 1.433225,
+          "emergency_m": 1.183225
+        }
+      }
+    },
+    "UAV12": {
+      "first_epoch": 1787928197.361197,
+      "last_epoch": 1787928266.141191,
+      "levels": [
+        "INSUFFICIENT_DATA",
+        "SAFE"
+      ],
+      "states": [
+        "EXECUTING"
+      ],
+      "peer_minima": {
+        "UAV11": {
+          "distance_m": 4.432755,
+          "time_epoch": 1787928222.541207,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV2": {
+          "distance_m": 14.673183,
+          "time_epoch": 1787928212.861248,
+          "level": "SAFE",
+          "warning_m": 1.402546,
+          "emergency_m": 1.152546
+        },
+        "UAV4": {
+          "distance_m": 10.834376,
+          "time_epoch": 1787928235.341374,
+          "level": "SAFE",
+          "warning_m": 1.559515,
+          "emergency_m": 1.309515
+        },
+        "UAV7": {
+          "distance_m": 7.018886,
+          "time_epoch": 1787928263.261241,
+          "level": "SAFE",
+          "warning_m": 1.45856,
+          "emergency_m": 1.20856
+        },
+        "UAV8": {
+          "distance_m": 5.335193,
+          "time_epoch": 1787928219.221252,
+          "level": "SAFE",
+          "warning_m": 1.363867,
+          "emergency_m": 1.113867
+        },
+        "UAV10": {
+          "distance_m": 9.565875,
+          "time_epoch": 1787928212.861248,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV3": {
+          "distance_m": 14.048975,
+          "time_epoch": 1787928222.541207,
+          "level": "SAFE",
+          "warning_m": 1.380222,
+          "emergency_m": 1.130222
+        },
+        "UAV5": {
+          "distance_m": 9.938737,
+          "time_epoch": 1787928209.541349,
+          "level": "SAFE",
+          "warning_m": 1.354578,
+          "emergency_m": 1.104578
+        },
+        "UAV9": {
+          "distance_m": 3.765243,
+          "time_epoch": 1787928219.221252,
+          "level": "SAFE",
+          "warning_m": 1.35,
+          "emergency_m": 1.1
+        },
+        "UAV1": {
+          "distance_m": 15.255518,
+          "time_epoch": 1787928265.14122,
+          "level": "SAFE",
+          "warning_m": 1.736091,
+          "emergency_m": 1.486091
+        },
+        "UAV6": {
+          "distance_m": 8.367584,
+          "time_epoch": 1787928219.221252,
+          "level": "SAFE",
+          "warning_m": 1.360675,
+          "emergency_m": 1.110675
+        }
+      }
+    }
+  },
+  "diagnosis": {
+    "actual_uav1_uav2_minimum_3d_m": 1.2425512678563146,
+    "actual_uav1_uav2_minimum_epoch": 1787928231.7771792,
+    "actual_runtime_1m_breached": false,
+    "predicted_uav1_uav2_minimum": {
+      "distance_m": 1.160908,
+      "time_epoch": 1787928239.503068,
+      "level": "WARNING",
+      "warning_m": 1.380594,
+      "emergency_m": 1.130594,
+      "observer": "UAV2",
+      "peer": "UAV1"
+    },
+    "global_predicted_minimum": {
+      "distance_m": 1.036079,
+      "time_epoch": 1787928246.956866,
+      "level": "WARNING",
+      "warning_m": 1.35,
+      "emergency_m": 1.1,
+      "observer": "UAV10",
+      "peer": "UAV9"
+    },
+    "structured_any_emergency": false,
+    "focus_0_2m_intervals": [
+      {
+        "start_epoch": 1787928261.2362819,
+        "end_epoch": 1787928340.813962,
+        "duration_s": 79.58581209182739
+      }
+    ],
+    "stable_0_2m_for_1s_before_inferred_failure": {
+      "UAV1": true,
+      "UAV2": true,
+      "UAV3": true,
+      "UAV4": true,
+      "UAV5": true,
+      "UAV6": true,
+      "UAV7": true,
+      "UAV8": true,
+      "UAV9": true,
+      "UAV10": true,
+      "UAV11": true,
+      "UAV12": true
+    },
+    "focus_target_error_at_inferred_failure_m": 0.11069863014013115,
+    "focus_structured_last_epoch": 1787928266.358823,
+    "inferred_task_result_epoch": 1787928274.805,
+    "inference_basis": "goal + 1551 ticks / 20 Hz; exact task-state timestamp unavailable",
+    "console_has_emergency_or_distance_breach": false,
+    "most_supported_explanation": "UAV4 did not continuously satisfy the 0.2 m / 1.0 s completion latch before the inferred task result; endpoint HOLD was mapped to COMMAND_HELD, while physical settling continued afterward."
+  }
+}

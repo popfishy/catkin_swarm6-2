@@ -1,0 +1,64 @@
+[==========] Running 20 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 18 tests from EgoPlannerCore
+[ RUN      ] EgoPlannerCore.PlanOnceProducesTimedTrajectory
+[       OK ] EgoPlannerCore.PlanOnceProducesTimedTrajectory (1 ms)
+[ RUN      ] EgoPlannerCore.PlanOnceAppliesStartDerivativesForRollingContinuity
+[       OK ] EgoPlannerCore.PlanOnceAppliesStartDerivativesForRollingContinuity (0 ms)
+[ RUN      ] EgoPlannerCore.PlanOnceWithoutWaypointsHoldsPosition
+[       OK ] EgoPlannerCore.PlanOnceWithoutWaypointsHoldsPosition (0 ms)
+[ RUN      ] EgoPlannerCore.NeighborMissingDegradesToSingle
+[       OK ] EgoPlannerCore.NeighborMissingDegradesToSingle (1 ms)
+[ RUN      ] EgoPlannerCore.FilterByRangeDropsFarNeighbors
+[       OK ] EgoPlannerCore.FilterByRangeDropsFarNeighbors (0 ms)
+[ RUN      ] EgoPlannerCore.CheckClearanceCatchesViolation
+[       OK ] EgoPlannerCore.CheckClearanceCatchesViolation (0 ms)
+[ RUN      ] EgoPlannerCore.SwarmReboundPushesTrajectoryAway
+[       OK ] EgoPlannerCore.SwarmReboundPushesTrajectoryAway (0 ms)
+[ RUN      ] EgoPlannerCore.CrossingTrajectoriesReplanToSafeArrival
+[       OK ] EgoPlannerCore.CrossingTrajectoriesReplanToSafeArrival (1 ms)
+[ RUN      ] EgoPlannerCore.ReciprocalNominalIntentBlocksUnsafeDefaultEnablement
+[       OK ] EgoPlannerCore.ReciprocalNominalIntentBlocksUnsafeDefaultEnablement (0 ms)
+[ RUN      ] EgoPlannerCore.FixedClearanceHardGateRejectsIntrudingNeighbor
+[       OK ] EgoPlannerCore.FixedClearanceHardGateRejectsIntrudingNeighbor (0 ms)
+[ RUN      ] EgoPlannerCore.TimedTrajectorySamplesPvaConsistently
+[       OK ] EgoPlannerCore.TimedTrajectorySamplesPvaConsistently (0 ms)
+[ RUN      ] EgoPlannerCore.SamplePvaAtStartMatchesRequestedDerivatives
+[       OK ] EgoPlannerCore.SamplePvaAtStartMatchesRequestedDerivatives (0 ms)
+[ RUN      ] EgoPlannerCore.ClampVectorNormLimitsMagnitudeAndHandlesZero
+[       OK ] EgoPlannerCore.ClampVectorNormLimitsMagnitudeAndHandlesZero (0 ms)
+[ RUN      ] EgoPlannerCore.InfeasibleDynamicsRejectedUnderProductionFlags
+/home/ub20tg/catkin_swarm6-2/src/ego_planner_driver/test/test_trajectory.cpp:402: Failure
+Expected equality of these values:
+  result
+    Which is: 4-byte object <03-00 00-00>
+  PlanResult::RETRYABLE_FAILURE
+    Which is: 4-byte object <02-00 00-00>
+[  FAILED  ] EgoPlannerCore.InfeasibleDynamicsRejectedUnderProductionFlags (0 ms)
+[ RUN      ] EgoPlannerCore.FeasibilityCubicSmoothVelocity
+[       OK ] EgoPlannerCore.FeasibilityCubicSmoothVelocity (1 ms)
+[ RUN      ] EgoPlannerCore.VerticalClimbWithNeighborsSucceeds
+[       OK ] EgoPlannerCore.VerticalClimbWithNeighborsSucceeds (0 ms)
+[ RUN      ] EgoPlannerCore.PlanOnceFinalSegmentEndsStatic
+[       OK ] EgoPlannerCore.PlanOnceFinalSegmentEndsStatic (1 ms)
+[ RUN      ] EgoPlannerCore.MinSnapInitialPointSetYieldsCruiseSpeedProfile
+[       OK ] EgoPlannerCore.MinSnapInitialPointSetYieldsCruiseSpeedProfile (0 ms)
+[----------] 18 tests from EgoPlannerCore (5 ms total)
+
+[----------] 1 test from OneSegmentPolynomial
+[ RUN      ] OneSegmentPolynomial.InterpolatesBoundaryStates
+[       OK ] OneSegmentPolynomial.InterpolatesBoundaryStates (0 ms)
+[----------] 1 test from OneSegmentPolynomial (0 ms total)
+
+[----------] 1 test from TimedTrajectory
+[ RUN      ] TimedTrajectory.SamplePvaClampsOutsideRelativeTimeDomain
+[       OK ] TimedTrajectory.SamplePvaClampsOutsideRelativeTimeDomain (0 ms)
+[----------] 1 test from TimedTrajectory (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 3 test suites ran. (5 ms total)
+[  PASSED  ] 19 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] EgoPlannerCore.InfeasibleDynamicsRejectedUnderProductionFlags
+
+ 1 FAILED TEST

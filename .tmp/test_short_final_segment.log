@@ -1,0 +1,22 @@
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from ShortFinalSegment
+[ RUN      ] ShortFinalSegment.FunctionalMatrixBoundedAndClassified
+[       OK ] ShortFinalSegment.FunctionalMatrixBoundedAndClassified (9 ms)
+[ RUN      ] ShortFinalSegment.StressLoopMemoryPlateau
+[       OK ] ShortFinalSegment.StressLoopMemoryPlateau (158 ms)
+[ RUN      ] ShortFinalSegment.ThresholdSidesAreClassifiedCorrectly
+[       OK ] ShortFinalSegment.ThresholdSidesAreClassifiedCorrectly (0 ms)
+[ RUN      ] ShortFinalSegment.ParameterizationCapRejectsOversize
+[       OK ] ShortFinalSegment.ParameterizationCapRejectsOversize (2 ms)
+[ RUN      ] ShortFinalSegment.ResourceTightCapRejectsOversize
+[       OK ] ShortFinalSegment.ResourceTightCapRejectsOversize (0 ms)
+[ RUN      ] ShortFinalSegment.DegenerateDoesNotTriggerBrake
+[       OK ] ShortFinalSegment.DegenerateDoesNotTriggerBrake (0 ms)
+[ RUN      ] ShortFinalSegment.FiniteAndOverflowInputsRejected
+[       OK ] ShortFinalSegment.FiniteAndOverflowInputsRejected (0 ms)
+[----------] 7 tests from ShortFinalSegment (169 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (169 ms total)
+[  PASSED  ] 7 tests.

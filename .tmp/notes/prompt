@@ -1,0 +1,272 @@
+26-08-21 15:27
+接续当前工作空间的开发任务。始终保持caveman对话风格。
+1. 读取 /home/ub20tg/Documents/Cline/Rules 内全局规则。
+2. 从@/src/tcp_to_ros/README.md 入手解析该工作空间怎么工作，怎么修改迭代；然后使用无头模式启动自主跑一遍测试熟悉测试流程，预期可以程控软起飞，但不能保证批次任务正常运行。在对话框中输出测试结果，然后停止所有测试进程。
+3. 结合测试结果，分析## 7. 后续开发需求，首先制定方案完成7.a验证，验证需要换用有头模式，由我手动启动仿真层，随后单步说明-确认-执行，验证所有批次任务。
+注意1：所有ros运行日志都重定向到工作空间中方便查看，也就是：
+    ```bash
+    export ROS_HOME=/home/ub20tg/catkin_swarm6-2/.ros_home
+    export ROS_LOG_DIR=/home/ub20tg/catkin_swarm6-2/.ros_home/log
+    mkdir -p "$ROS_LOG_DIR"
+    ```
+注意2：如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+注意3：
+
+
+26-08-23 23:40
+请在工作区 `/home/ub20tg/catkin_swarm6-2` 中实施：
+
+@src/tcp_to_ros/plans/implementation_plan_26082322.md 
+
+要求：
+
+1. 先阅读计划、项目 README、相关源码/launch/测试，并检查各嵌套 Git 仓库状态；不要覆盖或回滚已有修改。
+2. 按计划依次完成：
+   - EGO 改发包含 P/V/A/yaw 的 `PositionTarget`，并将 `replan_period_s` 改为 `1.0`；
+   - follower 改发显式 position/velocity/yaw 候选；
+   - relay 实现选源、generation 隔离、freshness/finite 校验和固定位置 HOLD，并独占 `/mavros/setpoint_raw/local`；
+   - 清理旧 Pose setpoint 链路及其他 MAVROS 旁路发布者。
+3. 严格遵守计划中的 PositionTarget frame/mask、ENU/NED、范围限制和安全边界；不要移植原版 safety timer、碰撞预测或紧急停止机制。
+4. 同步更新单元测试、rostest、launch 和相关文档，完成后运行可用的构建与测试。
+5. 始终保持caveman技能中的对话风格。并遵守全局规则/home/ub20tg/Documents/Cline/Rules/
+6. 全程先调查再修改；不执行危险操作，不修改工作区外文件，按需分批次提交 git，但不推送。
+7. 如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+8. 不再使用 /tmp 目录存放临时文件和脚本，使用工作空间内的 @/.tmp 目录
+9. 完成修改后自主进行单元测试和端到端无头测试，测试步骤参考@src/tcp_to_ros/docs/test_record_26082300.md 
+10. 最后汇报修改文件、关键设计、测试命令与结果、未验证项，以及各仓库 Git 状态。
+
+26-08-24 01:22
+从轨迹生成侧做温和调整。建议按以下顺序修改，然后重新测试和更新绘图：
+
+1. **降低重规划频率**  
+   将 `/home/ub20tg/catkin_swarm6-2/src/swarm_uav_executor/launch/uav_executor_ego.launch` 中：
+   ```xml
+   <param name="replan_period_s" value="1.0" />
+   ```
+   改为 `2.0` 或 `3.0` 秒。优先试 `2.0` 秒，可直接减少切段导致的速度纹波。
+
+2. **重规划起点使用一致状态**  
+   当前是“实时位置 + 旧轨迹速度/加速度”，容易在切段时不一致。改为从旧轨迹同一时刻取得完整 P/V/A；首次规划才使用实时位置和零导数。这样通常是降低纹波最有效的代码修复。
+
+3. **降低滚动起始导数限幅**  
+   将 `clampStartDerivatives()` 的 `1.5 倍`降低为 `1.0 倍`，并按三维向量范数限幅，而不是逐轴限幅：
+   ```cpp
+   vel = vel.normalized() * std::min(vel.norm(), cfg.max_vel);
+   acc = acc.normalized() * std::min(acc.norm(), cfg.max_acc);
+   ```
+   可以明显抑制下降段 2m/s 级反向尖峰。
+
+26-08-24 15:55
+先提交当前修改，然后实施计划@src/tcp_to_ros/plans/implementation_plan_26082415.md ，实施过程要满足以下要求：
+1. 先阅读计划、项目 README、相关源码/launch/测试，完整了解该项目，并检查各嵌套 Git 仓库状态。
+2. 同步更新单元测试、rostest、launch 和相关文档，完成后运行可用的构建与测试。
+3. 始终保持caveman技能中的对话风格。并遵守全局规则/home/ub20tg/Documents/Cline/Rules/
+4. 全程先调查（包括使用网络搜索）再修改；不执行危险操作，不修改工作区外文件，按需分批次提交 git，但不推送。
+5. 如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+6. 使用工作空间内的 @/.tmp 目录存放临时文件和脚本
+7. 完成修改后自主进行单元测试和端到端无头测试，测试步骤参考@src/tcp_to_ros/docs/test_record_26082300.md 
+8. 最后汇报修改文件、关键设计、测试命令与结果、未验证项，以及各仓库 Git 状态。
+
+26-08-25 01:13
+先提交当前修改，然后实施计划 @src/tcp_to_ros/plans/implementation_plan_26082500.md ，并在 @src/tcp_to_ros/docs 新增一个测试记录文件用于该计划实施和测试的记录
+本次执行以及此后执行任务都要满足以下要求：
+1. 同步更新单元测试、rostest、launch 和相关文档，完成后运行可用的构建与测试。
+2. 始终保持caveman技能中的对话风格。并遵守全局规则/home/ub20tg/Documents/Cline/Rules/
+3. 全程先调查（包括使用网络搜索）再修改；不执行危险操作，不修改工作区外文件，按需分批次提交 git，但不推送。
+4. 如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+5. 使用工作空间内的 @/.tmp 目录存放临时文件和脚本，而不是/tmp目录
+
+26-08-25 16:44
+在@src目录下，从@src/tcp_to_ros 功能包的69530d7提交开始，实施了@src/tcp_to_ros/plans/implementation_plan_26082500.md 计划。先全面了解项目内容向我复述项目目的和测试流程，有我确认纠偏后，再分析总结从@src/tcp_to_ros 的69530d7提交开始，@src内所有ros1功能包的提交都做了什么，其引入的安全措施会不会印象当前仿真中跨ros master通信的可用性和算法稳定性（参考很久之前引入lease机制后批次任务下发频繁失败）
+分析过程要满足以下要求：
+1. 先阅读计划、项目 README、相关源码/launch/测试，完整了解该项目，并检查各嵌套 Git 仓库状态。
+2. 始终保持caveman技能中的对话风格。并遵守全局规则/home/ub20tg/Documents/Cline/Rules/
+3. 全程先调查（包括使用网络搜索）再修改；不执行危险操作，不修改工作区外文件，按需分批次提交 git，但不推送。
+4. 如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+5. 使用工作空间内的 @/.tmp 目录存放临时文件和脚本，而不是/tmp目录
+
+
+26-08-26 03:18
+先提交当前修改，然后实施计划 @src/tcp_to_ros/plans/implementation_plan_26082602.md ，并在 @src/tcp_to_ros/test_records 新增一个测试记录文件用于该计划实施和测试的记录（注意：测试记录目录 docs 已更名为 test_records，后续引用一律用新路径）
+本次执行以及此后执行任务都要满足以下要求：
+1. 先阅读计划、项目 README、相关源码/launch/测试，完整了解该项目，并检查各嵌套 Git 仓库状态；不要覆盖或回滚已有修改。
+2. 严格按计划 §3/§7 实施：
+   - 规划层 calcSwarmCost 回固定 clearance（swarm_clearance×2=1m），删除 computeSafeClearance 及 data_age/swarm_soft_margin 依赖；
+   - 新增 10Hz 周期碰撞检查 collisionCheckTick（置位 planning_requested_），删除 acceptNeighborIntentLocked 事件驱动 replan（移入计划 §5 备用记录）；
+   - 删除周期 5Hz intent 刷新（publishCurrentIntentTick/intent_pub_mutex_），发布回"生成即发"，traj_id 仅 replan 提交时递增；
+   - 监督层 SafetyPredictor 动态 EMERGENCY 门槛、GPS bias 时间戳修正、intent 时间契约、PositionTarget 契约与旧 1m 门禁全部保留不回归。
+3. 同步更新单元测试、rostest、launch（删 intent_publish_rate_hz、加 collision_check_rate_hz=10，replan_period_s=1.0 不变）和相关文档，完成后运行可用的构建与测试，全量 catkin_test_results --all build 0 failure。
+4. 始终保持caveman技能中的对话风格。并遵守全局规则/home/ub20tg/Documents/Cline/Rules/
+5. 全程先调查（包括使用网络搜索）再修改；不执行危险操作，不修改工作区外文件，按需分批次提交 git，但不推送。
+6. 如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+7. 使用工作空间内的 @/.tmp 目录存放临时文件和脚本，而不是/tmp目录
+8. 完成修改后自主进行单元测试和端到端无头测试：双机正交/换位 PX4 SITL 编排参考 @verification/ego_smoke/reciprocal_15sitl.py，启动流程参考 @src/tcp_to_ros/test_records/test_record_26082300.md 与 @src/tcp_to_ros/test_records/test_record_26082400.md；测试结束 HOLD 全部测试机并检查残留。
+9. 最后汇报修改文件、关键设计、测试命令与结果、未验证项，以及各仓库 Git 状态。
+注意1：所有 ros 运行日志重定向到工作空间方便查看：
+    ```bash
+    export ROS_HOME=/home/ub20tg/catkin_swarm6-2/.ros_home
+    export ROS_LOG_DIR=/home/ub20tg/catkin_swarm6-2/.ros_home/log
+    mkdir -p "$ROS_LOG_DIR"
+    ```
+
+26-08-26 21:03
+先提交当前修改，然后实施计划 @/src/tcp_to_ros/plans/implementation_plan_26082621.md ，并在 @/src/tcp_to_ros/test_records 新增一个测试记录文件用于该计划实施和测试的记录
+
+本次执行以及此后执行任务都要满足以下要求：
+1. 先阅读计划、项目 README、相关源码/launch/测试，完整了解该项目，并检查各嵌套 Git 仓库状态；不要覆盖或回滚已有修改。
+2. 严格按计划文件实施。
+3. 同步更新单元测试、rostest、launch（删 intent_publish_rate_hz、加 collision_check_rate_hz=10，replan_period_s=1.0 不变）和相关文档，完成后运行可用的构建与测试，全量 catkin_test_results --all build 0 failure。（注意检查已有单元测试也可能出错或不适配最新程序）
+4. 始终保持caveman技能中的对话风格。并遵守全局规则/home/ub20tg/Documents/Cline/Rules/
+5. 全程先调查（包括搜索当前工作空间、各git仓库历史和使用网络搜索）再修改；不执行危险操作，不修改工作区外文件，按需分批次提交 git，但不推送。
+6. 如果有不确定问题，使用gril with docs技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体
+7. 使用工作空间内的 @/.tmp 目录存放临时文件和脚本，而不是/tmp目录
+8. 完成修改后自主进行单元测试和端到端无头测试：双机正交/换位 PX4 SITL 编排参考 @verification/ego_smoke/reciprocal_15sitl.py，启动流程参考 @src/tcp_to_ros/test_records/test_record_26082300.md 与 @src/tcp_to_ros/test_records/test_record_26082400.md；测试结束 HOLD 全部测试机并检查残留。
+9. 最后汇报修改文件、关键设计、测试命令与结果、未验证项，以及各仓库 Git 状态。
+注意1：所有 ros 运行日志重定向到工作空间方便查看：
+    ```bash
+    export ROS_HOME=/home/ub20tg/catkin_swarm6-2/.ros_home
+    export ROS_LOG_DIR=/home/ub20tg/catkin_swarm6-2/.ros_home/log
+    mkdir -p "$ROS_LOG_DIR"
+    ```
+
+26-08-28 02:21
+在工作区 `/home/ub20tg/catkin_swarm6-2` 中自主实施计划：@src/tcp_to_ros/plans/implementation_plan_26082722.md
+并在完成实现和验证后新增：@src/tcp_to_ros/test_records/test_record_26082722.md
+
+要求：
+0. 积极使用subagent本地（当前工作空间、各git仓库历史）搜索、mcp网络搜索等方式调查确认后再执行修改，节省主agent上下文
+1. 始终保持 caveman 对话风格，并遵守/home/ub20tg/Documents/Cline/Rules/目录内的全局规则。正式计划文件是本次实施的唯一权威，不使用其他旧草案中的 `AT_SEGMENT_TARGET`、`BRAKE_REQUIRED` 或 brake-helper 方案。
+2. 开始前阅读计划、`src/tcp_to_ros/plans/README.md`、项目 README、相关源码/launch/测试和既有测试记录；检查所有嵌套 Git 仓库 HEAD/status，确认用户已提交的基线，不覆盖或回滚任何已有修改。
+3. 严格按计划实施：
+   - `planOnce()` 使用四类内部 `PlanResult`：`SUCCESS/DEGENERATE_SEGMENT/RETRYABLE_FAILURE/RESOURCE_LIMIT`；
+   - 多项式只在真实 `[0,T]` 内有界采样，所有数量计算在分配前做 finite、overflow 和 hard-limit 校验；
+   - `TimedTrajectory`、B-spline 参数化和 neighbor intent consumer 建立计划规定的资源上限；
+   - `parameterizeToBspline()` 改为 bounded single-QR，失败不保留旧输出或半成品；
+   - node 保持真实 odometry 对 keypoint 推进和最终完成的唯一权威；`DEGENERATE_SEGMENT` 不修改现有 `current_`、不完成、不失败计时、不触发紧急制动；
+   - `RESOURCE_LIMIT/std::bad_alloc` 不 activation retry、不 yield，立即进入现有 `EGO_PLAN_FAILED → executor HOLD → backend ALL HOLD`；
+   - 普通短段、方向退化和 final 段动力学不可行不得新增紧急制动路径；既有 Safety emergency + replan failure + TTC 制动链保持不变。
+4. 保持冻结契约：bridge 透明转发、GPS bias、intent epoch/t[]、PositionTarget P/V/A/yaw、Safety 默认 active、planner/executor 1m 三维球形门禁、relay 唯一 MAVROS 出口均不改变。`TimedTrajectory` nominal step 保持 0.1s，planner candidate-publication timer 和 setpoint-relay publication timer 保持 30Hz，candidate timeout 保持 0.2s。
+5. 同步修改计划列出的 C++ header/source、生产 launch、单元测试、rostest/static test、`ego_planner_driver/README.md` 和必要构建配置。不要修改 `swarm_topology_bridge`、消息协议、`gps_bias_node.py` 或 PX4 参数。
+6. 测试必须由小到大执行：
+   - 先运行受 `RLIMIT_AS/CPU/wall timeout` 保护的短末段复现和回归；
+   - 构建并运行 `ego_planner_driver`、`swarm_uav_executor`、`tcp_to_ros` targeted tests；
+   - 使用 `-j1 -p1` 运行相关包测试；
+   - 再运行全工作区测试，要求 `catkin_test_results --all build` 为 0 errors / 0 failures；
+   - 依次运行单 planner 500 次和 2000 次压力测试，检查计划规定的 RSS 平台、`ru_maxrss`、点数和样本上限；
+   - 任一步失败先诊断并修复，不跳过失败门禁进入 SITL。
+7. 只有全部自动测试和内存门禁通过后，才运行一次受 cgroup 或 watchdog 保护的 15-UAV active prepare 端到端测试。严格执行：全环境 clean → 15 模型 → 15 套 onboard 一次启动 → bridge/backend/calibration/origin → 外部 arm/OFFBOARD → planner TAKEOFF 5m/HOLD → PREPARE/START → 任务 → 无条件全清理。
+8. 15-UAV 测试不得在失败轮次中单机修补或重启。任一 planner death、bad_alloc、OOM、OFFBOARD loss、setpoint gap、任务 failure/timeout 或资源门禁违反，立即判失败并清理整个环境；保留日志后从全 clean 重新开始。
+9. 所有 ROS 日志和临时脚本留在工作空间内，不使用 `/tmp`：
+    ```bash
+    export ROS_HOME=/home/ub20tg/catkin_swarm6-2/.ros_home
+    export ROS_LOG_DIR=/home/ub20tg/catkin_swarm6-2/.ros_home/log
+    mkdir -p "$ROS_LOG_DIR"
+    ```
+   临时文件使用 @/.tmp。测试结束必须确认相关进程和端口全部 clean。
+10. 测试记录必须写明：修改文件、构建/测试命令、测试数量和结果、worker timeout/RSS、500/2000 次压力结果、15-UAV 每 planner RSS/PSS、host memory、setpoint 最大间隔、30Hz 实测频率、PX4 OFFBOARD 状态、memory events、失败证据和最终清理状态。同步更新 `src/tcp_to_ros/plans/README.md` 与计划状态。
+11. 全程先调查、复现和验证证据再修改或执行系统状态操作；不执行危险操作，不修改工作区外文件；不要通过增大 limits、启用 swap、关闭 Safety 或减少 UAV 数量掩盖问题。无需中途询问可由代码和计划决定的问题；只有真实需求冲突或破坏性范围变化才停止。按需分批次提交 git，但不推送。
+12. 如果有不确定问题，使用 grill-with-docs 技能提问等我回答，但是只提问核心问题，保持当前方案简洁性，如非必要勿增实体。
+13. 最后简洁汇报：根因修复、关键实现、修改文件、全部测试结果、15-UAV 验收、未验证项、提交记录及各嵌套仓库 Git 状态。
+
+26-08-28 17:14
+在工作区 `/home/ub20tg/catkin_swarm6-2` 中实施代码审查修复建议：.tmp/notes/code_review_260828_cline_deepseek.md
+
+要求：
+1. 始终保持 caveman 对话风格，并遵守 `/home/ub20tg/Documents/Cline/Rules/` 内全局规则。积极使用 subagent 调查当前工作空间、相关 Git 历史、源码、launch、测试和日志，先确认事实再修改。
+2. 开始前检查所有嵌套 Git 仓库 HEAD/status；不要覆盖或回滚已有修改。审查报告第 3、4、6 节是本次修复范围和实施要求的唯一权威，完整落实其中保留的问题、修复决策、测试和记录要求。
+3. 本项目只面向报告定义的固定实验场景。不要重新实施报告已删除的问题，也不要增加面向未知 identity、未来调用方、大规模扩展或其他非支持配置的通用防御。
+4. 保持 `implementation_plan_26082722.md` 中与当前实验相关的冻结契约不变；本次修改不得造成 bridge、GPS bias、intent、PositionTarget、Safety、距离门禁、relay 或现有频率契约回归。
+5. 测试由小到大执行：targeted core/state-machine/resource tests → 受限 500/2000 次压力测试 → 相关包 `-j1 -p1` 测试 → 全工作区测试。要求 `catkin_test_results --all build` 为 0 errors / 0 failures；任何失败先诊断修复，不跳过门禁。
+6. 全部自动测试通过后，运行一次受 cgroup 或 watchdog 保护的 15-UAV active prepare。严格从全环境 clean 开始，一次启动完整环境；任务结束或任一失败后无条件全清理。失败轮次不得单机修补或重启。
+7. 所有 ROS 日志和临时文件留在工作空间：
+    ```bash
+    export ROS_HOME=/home/ub20tg/catkin_swarm6-2/.ros_home
+    export ROS_LOG_DIR=/home/ub20tg/catkin_swarm6-2/.ros_home/log
+    mkdir -p "$ROS_LOG_DIR"
+    ```
+    临时文件使用 .tmp ，不使用 `/tmp`；测试结束确认相关进程和端口全部 clean。
+8. 全程先调查、复现和验证证据再执行修改或系统状态操作；不通过增大 limits、启用 swap、关闭 Safety 或减少 UAV 数量掩盖问题。不执行危险操作，不修改工作区外文件。按需在对应嵌套仓库分批 commit，但不 push。
+9. 如果有不确定问题，使用 grill-with-docs 技能提问等我回答；只提问核心问题，保持方案简洁，如非必要勿增实体。
+10. 完成后更新测试记录、计划索引和审查报告中的处理状态，并简洁汇报：修复内容、修改文件、提交记录、全部测试结果、15-UAV 验收、未验证项及各嵌套仓库 Git 状态。
+
+
+26-08-28 17:25
+# 工作空间上下文速览（节省开始前熟悉，全为已核实事实）
+
+## 项目是什么
+- `catkin_swarm6-2`：ROS1 Noetic 多无人机集群工作空间，固定实验场景 Group A 最多 A01-A15 / UAV1-UAV15，较小编队从 1 连续编号；只支持当前 launch 配置，不面向未知 identity/未来调用方/大规模扩展。
+- 6 个独立 git 仓库：`tcp_to_ros`(GCS_A)、`swarm_uav_interfaces`(msg/srv)、`swarm_topology_bridge`、`swarm_uav_executor`(机载执行)、`ego_planner_driver`(C++ 轨迹)、`safe_valley_exp`(示例+15机sim launch)。根目录非 git；`references/`、`verification/` 只读不入 git。
+- 阅读顺序：`src/tcp_to_ros/README.md` → `src/tcp_to_ros/plans/README.md`（唯一实时权威）→ `test_records/`。
+- 端口约定：sim 11300、GCS_A 11310、UAVn=11311..11325、Gazebo 11345、TCP 39001。
+- 架构链路：runtime(TCP 39001) → tcp_to_ros(Action+backend+标定) → bridge(跨 Master) → executor → ego_planner_driver(30Hz PositionTarget 候选) → setpoint_relay(唯一 MAVROS 出口)。
+
+## 构建/自动测试
+- 构建：`catkin build <pkg> --no-deps`；相关目标包 `ego_planner_driver swarm_uav_executor tcp_to_ros`；全量 `catkin build`。
+- 测试串行 `-j1 -p1`：`catkin run_tests <pkg> --no-deps -j1 -p1` 后 `catkin run_tests <pkg> --no-deps -j1 -p1`；全量 `catkin test -j1 -p1` + `catkin_test_results --all build` 必须 0 errors / 0 failures。
+- 受限短末段：`timeout 120 prlimit --as=536870912:536870912 --cpu=60 ./devel/.private/ego_planner_driver/lib/ego_planner_driver/test_short_final_segment --gtest_color=no`（该测试自含 fork worker + RLIMIT_AS 512MiB + RSS 检查点 + ru_maxrss + 自含 main）。
+- 压力测试：`SHORT_FINAL_STRESS_LOOPS=<N> timeout <T> prlimit --as=536870912:536870912 --cpu=<C> .../test_short_final_segment --gtest_filter='ShortFinalSegment.StressLoopMemoryPlateau:ShortFinalSegment.FunctionalMatrixBoundedAndClassified'`；默认 500 次、长压力 2000 次。
+
+## 15-UAV 端到端编排（cgroup 根只读不可写 → watchdog 方案：外层 timeout+prlimit+内存预留）
+严格全 clean 一次启动，失败整轮 FAIL 后无条件全清理：
+1. 全 clean：`bash .tmp/headless_test/cleanup.sh`；残留确认：11300/11310/11311-11325/11345/39001 free，px4/gazebo/rosmaster/mavros/bridge_node 进程 0。
+2. `run.sh sim`（`.tmp/headless_test/run.sh`）→ 等 15 px4 进程 + 15 spawn。
+3. `EGO_SAFETY_SUPERVISOR_MODE=active run.sh onboard` → 等 15/15 ready。
+4. `run.sh gcs_bridge_only` → `/UAV1/uav_task` 服务 OK → `run.sh gcs_backend_only` → `calibration_ready=True`。
+5. `offboard_takeoff_15.py 1..15`（arm/OFFBOARD → planner 软起飞 5m → HOLD；z≈5m 确认）。
+6. `run.sh tcp` → 39001 LISTENING。
+7. `python3 references/runtime/task_test.py --backend tcp --group A --task prepare --tcp-host 127.0.0.1 --tcp-port 39001 --timeout-s 180`。
+日志：`.ros_home/log/headless_test/`（01_sim..07_task_prepare）。
+验收判据：planner RSS 平台（修复后全 11-12MB）、OFFBOARD 15/15 保持、relay 实测 30Hz 且 max 间隔<0.2s、无 OOM/bad_alloc/-6/-9、host 可用内存充足；任一 task failure → 整轮 FAIL 并清理（日志保留）。历史 prepare 曾 FAILURE(A02/HOLD) 属既有避碰规划无解已知类。
+
+## 当前基线（审查修复前，已核实）
+- HEAD：`ego_planner_driver=8532bc4`、`swarm_uav_executor=abd8d14`、`tcp_to_ros=711c7f4`；其余嵌套仓库未动；全部 clean。
+- OOM 修复（26082722）已实施：`PlanResult{SUCCESS/DEGENERATE_SEGMENT/RETRYABLE_FAILURE/RESOURCE_LIMIT}`、真实 `[0,T]` 有界采样、分配前有限/溢出/硬上限校验、bounded single-QR（一次分解三列 RHS）、node 分流、replan 线程 `bad_alloc` containment、intent/轨迹/采样硬上限、资源参数 fail-fast。
+- 冻结契约（不得回归）：bridge 透明转发、GPS bias、intent epoch/t[]、PositionTarget P/V/A/yaw、Safety 默认 active、planner/executor 1m 三维球形门禁、relay 唯一 MAVROS 出口、TimedTrajectory nominal step 0.1s、planner candidate 与 setpoint-relay timer 30Hz、candidate timeout 0.2s。
+
+---
+
+# 任务（唯一权威：`.tmp/notes/code_review_260828_cline_deepseek.md` 第 3、4、6 节）
+
+在工作区 `/home/ub20tg/catkin_swarm6-2` 实施代码审查修复建议。
+
+## 修复范围（完整落实报告保留的问题与修复决策，不重做报告已删问题）
+
+### 3.1 [HIGH] 退化段状态机可能导致任务无法完成/无法按失败超时收口
+- 现状：`replanOnce()` 建 snapshot 前只查 pose freshness，未先用 fresh odometry 推进 0.5m 内中间 keypoint、完成 0.2m+stable 最终到达、跳过重复/过近 target；core 返回 `DEGENERATE_SEGMENT` 时 node 直接返回，`checkArrival()` 无 `current_` 时直接退出 → 同点目标持续 HOLD；已有 `plan_fail_since_` 后持续退化既不清计时也不 10s 收口。
+- 修复决策：① `planned_start` 仍取旧 `current_` 同刻 P/V/A（不改真实位置）；② snapshot 前先用 fresh odom 处理 target 推进/最终到达；③ 无有效 `current_` 时真实到达则 COMPLETED、仍无有效 segment 进普通可重试；④ 为已有失败计时后持续退化定义可终止路径；⑤ 替换“同点目标保持 HOLD”错误测试，增加“已有失败计时后退化”回归。
+
+### 3.2 [HIGH] 当前 launch 下动力学不可行轨迹仍可能作为 SUCCESS 发布
+- 现状：`checkFeasibility()==false` 且 `enable_rebound`/`enable_time_reparam` 均 false 时仍继续输出并 SUCCESS → 可能替换合法 `current_`、发布 intent。
+- 修复建议：① 当前开关组合下 `checkFeasibility()==false` 必须返回 `RETRYABLE_FAILURE`；② 失败不发布 intent、不替换现有合法 `current_`；③ 用当前生产参数（max_vel=1.0/max_acc=6.0）增加 core/node 回归，不用 `1.5×max_vel` 放宽判据掩盖结果。
+
+### 4.1 [HIGH] 记录口径：内存专项 PASS、计划级验收 FAIL
+- 现有运行只证明 memory-specific observations PASS；prepare 返回 `FAILURE(A02/HOLD)` ⇒ 按冻结计划 §15 判整轮 FAIL。
+- 修改 `test_record_26082722.md` 与 `plans/README.md` 状态为：实现已提交；本轮 memory observations PASS；计划级 15-UAV acceptance **FAIL**，需修复当前任务缺陷后重跑。A02 根因是否属 OOM 范围不改变判 FAIL 事实。
+
+### 4.2 [MEDIUM] 资源门禁/运行记录完整性（已接受的精简决策）
+1. 方式 B：资源注入拆成独立测试，只接受 `PlanResult::RESOURCE_LIMIT` 且失败输出为空（不放进普通矩阵的 `rep.resource` 计数）。
+2. 普通分类矩阵不含资源注入，继续断言自身 `resource==0`。
+3. 新增 node 层测试：`RESOURCE_LIMIT` 零 activation retry、零 yield、不发布部分 intent、立即失败/HOLD。
+4. 检查两个 `setrlimit()` 返回值，失败用明确 exit code。
+5. 用完整 suite filter（`ShortFinalSegment.StressLoopMemoryPlateau:ShortFinalSegment.FunctionalMatrixBoundedAndClassified`）、准确起止时间、operator、原始资源/频率数据重跑并更新记录。
+
+## 实施顺序（报告第 6 节）
+1. 修复 fresh-odom/no-current/失败计时的退化段状态机 + 更新对应测试。
+2. 修复当前开关组合下动力学不可行仍 SUCCESS + core/node 测试。
+3. 按方式 B 修正资源分类测试 + `setrlimit()` 返回检查。
+4. 修正压力测试命令与测试记录时间/证据。
+5. 更新计划状态为 memory PASS / 计划级 acceptance FAIL。
+6. 重新运行自动测试与 15-UAV prepare。
+
+## 测试门禁（由小到大，缺一不可）
+- targeted core/state-machine/resource tests → 受限 500/2000 次压力（RSS 平台/ru_maxrss/点数上限）→ 相关包 `-j1 -p1` → 全工作区 `catkin_test_results --all build` 0 errors / 0 failures。
+- 全部自动测试通过后，一次受 watchdog 保护的 15-UAV active prepare：全 clean → 15 模型 → 15 套 onboard(active) 一次启动 → bridge/backend/标定 → 外部 arm/OFFBOARD → TAKEOFF 5m/HOLD → prepare 任务 → 无条件全清理。失败轮次不得单机修补/重启。
+- 完成后更新 `test_record_26082722.md`、`plans/README.md`、审查报告处理状态，提交（不 push），汇报：修复内容、修改文件、提交记录、全部测试结果、15-UAV 验收、未验证项、各嵌套仓库 Git 状态。
+
+## 通用要求
+- caveman 对话风格；遵守 `/home/ub20tg/Documents/Cline/Rules/` 全局规则。
+- 积极用 subagent 调查工作空间/各 git 仓库历史/源码/launch/测试/日志，先确认事实再改；不覆盖或回滚已有修改。
+- 保持 26082722 冻结契约；不造成 bridge/GPS bias/intent/PositionTarget/Safety/距离门禁/relay/频率契约回归。
+- 不通过增大 limits、启用 swap、关闭 Safety 或减少 UAV 数量掩盖问题；不修改工作区外文件；不执行危险操作。
+- 所有 ROS 日志与临时文件留工作空间：`export ROS_HOME=$WS/.ros_home; export ROS_LOG_DIR=$WS/.ros_home/log; mkdir -p "$ROS_LOG_DIR"`，临时用 `.tmp` 不用 `/tmp`；结束确认进程/端口 clean。
+- 不确定核心问题用 grill-with-docs 提问；如非必要勿增实体。

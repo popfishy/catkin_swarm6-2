@@ -1,0 +1,86 @@
+{
+  "mission_id": "triple-15sitl-9f81d12e86",
+  "passed": false,
+  "scenario_enu": {
+    "UAV1": {
+      "stage": [
+        2.0,
+        5.0,
+        12.0
+      ],
+      "goal": [
+        18.0,
+        5.0,
+        12.0
+      ]
+    },
+    "UAV2": {
+      "stage": [
+        10.0,
+        -3.0,
+        12.0
+      ],
+      "goal": [
+        10.0,
+        13.0,
+        12.0
+      ]
+    },
+    "UAV3": {
+      "stage": [
+        18.0,
+        13.0,
+        12.0
+      ],
+      "goal": [
+        2.0,
+        -3.0,
+        12.0
+      ]
+    }
+  },
+  "min_pairwise_3d_distance_m": {
+    "UAV1-UAV2": 1.253308910582642,
+    "UAV1-UAV3": 1.2757661613280542,
+    "UAV2-UAV3": 0.5633652693468265
+  },
+  "required_clearance_m": 1.0,
+  "max_allowed_speed_mps": 2.5,
+  "max_allowed_acceleration_mps2": 6.3,
+  "max_lateral_sign_changes": 2,
+  "vehicles": {
+    "UAV1": {
+      "terminal_status": "COMPLETED",
+      "error_code": "",
+      "odom_samples": 590,
+      "intent_messages": 35,
+      "distinct_traj_ids": 35,
+      "max_abs_lateral_deviation_m": 0.05834627151489258,
+      "lateral_sign_changes": 0,
+      "max_speed_mps": 1.4988873475492785,
+      "max_acceleration_mps2": 4.496969221498131
+    },
+    "UAV2": {
+      "terminal_status": "FAILED",
+      "error_code": "HOLD_FAILED",
+      "odom_samples": 589,
+      "intent_messages": 40,
+      "distinct_traj_ids": 40,
+      "max_abs_lateral_deviation_m": 0.12297916412353516,
+      "lateral_sign_changes": 0,
+      "max_speed_mps": 1.0573104314795625,
+      "max_acceleration_mps2": 1.8124155707283924
+    },
+    "UAV3": {
+      "terminal_status": "FAILED",
+      "error_code": "MIN_DISTANCE_BREACH",
+      "odom_samples": 590,
+      "intent_messages": 60,
+      "distinct_traj_ids": 60,
+      "max_abs_lateral_deviation_m": 5.104985237121582,
+      "lateral_sign_changes": 0,
+      "max_speed_mps": 1.292484670847729,
+      "max_acceleration_mps2": 1.6198743802899807
+    }
+  }
+}

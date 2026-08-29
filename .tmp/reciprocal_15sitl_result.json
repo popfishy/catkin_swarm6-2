@@ -1,0 +1,61 @@
+{
+  "mission_id": "reciprocal-15sitl-b31bc11b05",
+  "passed": true,
+  "scenario_enu": {
+    "UAV1_stage": [
+      2.0,
+      5.0,
+      12.0
+    ],
+    "UAV1_goal": [
+      18.0,
+      5.0,
+      12.0
+    ],
+    "UAV2_stage": [
+      10.0,
+      -3.0,
+      12.0
+    ],
+    "UAV2_goal": [
+      10.0,
+      13.0,
+      12.0
+    ]
+  },
+  "paired_samples": 672,
+  "min_horizontal_distance_m": 1.6083493663385882,
+  "min_3d_distance_m": 1.6083588974283938,
+  "required_clearance_m": 1.0,
+  "max_allowed_speed_mps": 2.5,
+  "max_allowed_acceleration_mps2": 6.3,
+  "max_lateral_sign_changes": 2,
+  "vehicles": {
+    "UAV1": {
+      "terminal_status": "COMPLETED",
+      "error_code": "",
+      "odom_samples": 672,
+      "intent_messages": 42,
+      "neighbor_intent_input_seen": true,
+      "distinct_traj_ids": 42,
+      "max_intent_age_s": 0.0013706684112548828,
+      "max_abs_lateral_deviation_m": 0.0606837272644043,
+      "lateral_sign_changes": 0,
+      "max_speed_mps": 1.0730072620175937,
+      "max_acceleration_mps2": 2.9926342652224154
+    },
+    "UAV2": {
+      "terminal_status": "COMPLETED",
+      "error_code": "",
+      "odom_samples": 672,
+      "intent_messages": 46,
+      "neighbor_intent_input_seen": true,
+      "distinct_traj_ids": 46,
+      "max_intent_age_s": 0.0011868476867675781,
+      "max_abs_lateral_deviation_m": 0.0745687484741211,
+      "lateral_sign_changes": 0,
+      "max_speed_mps": 1.1232507026865037,
+      "max_acceleration_mps2": 1.8816815757389693
+    }
+  }
+}
